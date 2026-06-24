@@ -1,0 +1,18 @@
+Options -Indexes
+RewriteEngine On
+
+# Bare root → main site (only the empty path, sub-paths untouched)
+RewriteRule ^$ https://meraki.show/ [R=301,L]
+
+# Legacy path kept working
+RewriteRule ^pre-register/?$ /preregistration/ [R=301,L]
+
+# Far-future cache for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css         "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/jpeg       "access plus 30 days"
+  ExpiresByType image/png        "access plus 30 days"
+  ExpiresByType image/x-icon     "access plus 30 days"
+</IfModule>
