@@ -348,7 +348,7 @@ em{font-style:italic;color:var(--gold)}
 /* ---------- footer ---------- */
 .foot{background:var(--noir);border-top:1px solid var(--line);padding:var(--sec) 0 2.5rem}
 .foot-top{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
-.foot .logo{height:32px;width:auto}
+.foot .logo{height:clamp(44px,5.5vw,64px);width:auto}
 .foot .social{display:flex;gap:.6rem}
 .foot .social a{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--mist);transition:color var(--t),border-color var(--t),background var(--t),transform var(--t)}
 .foot .social a:hover{color:var(--gold);border-color:var(--gold);background:var(--gold-soft);transform:translateY(-3px)}
