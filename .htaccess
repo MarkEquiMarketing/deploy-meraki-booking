@@ -7,6 +7,9 @@ RewriteRule ^$ https://meraki.show/ [R=301,L]
 # Legacy path kept working
 RewriteRule ^pre-register/?$ /preregistration/ [R=301,L]
 
+# Campaign URL for the 2026 event -> pre-registration (temporary; may become its own page later)
+RewriteRule ^event-2026/?$ /preregistration/ [R=302,L,NC]
+
 # Far-future cache for static assets
 <IfModule mod_expires.c>
   ExpiresActive On
