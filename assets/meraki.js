@@ -72,6 +72,79 @@
       });
     });
 
+    /* ticketing: choose-your-night toggle (lazy-loads inactive shop, keeps state when switching) */
+    var nightBtns = document.querySelectorAll('.nights [data-pane]');
+    if (nightBtns.length) {
+      var checkoutTracked = false;
+      nightBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          nightBtns.forEach(function (b) { b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+          document.querySelectorAll('.shop-frame .pane').forEach(function (p) {
+            var active = p.id === btn.dataset.pane;
+            p.hidden = !active;
+            if (active) {
+              var f = p.querySelector('iframe[data-src]');
+              if (f) { f.src = f.dataset.src; f.removeAttribute('data-src'); }
+            }
+          });
+          if (!checkoutTracked && window.fbq) { fbq('track', 'InitiateCheckout'); checkoutTracked = true; }
+        });
+      });
+    }
+
+    /* countdown — <div class="count" data-until="2026-10-02"> */
+    var cd = document.querySelector('.count[data-until]');
+    if (cd) {
+      var units = ['days', 'hours', 'mins'];
+      var tick = function () {
+        var diff = new Date(cd.dataset.until + 'T00:00:00') - new Date();
+        if (diff < 0) diff = 0;
+        var d = Math.floor(diff / 864e5), h = Math.floor(diff % 864e5 / 36e5), m = Math.floor(diff % 36e5 / 6e4);
+        var vals = { days: d, hours: h, mins: m };
+        units.forEach(function (u) {
+          var el = cd.querySelector('[data-u="' + u + '"]');
+          if (el) el.textContent = String(vals[u]).padStart(2, '0');
+        });
+      };
+      tick();
+      setInterval(tick, 30000);
+    }
+
+    /* honest FOMO toasts — reads window.merakiToasts (array of strings) set by the page.
+       LEGAL NOTE (NL/BE misleading-practices rules): only verifiable/true messages, or REAL
+       anonymised purchase data. Never invent names or purchases. */
+    var toastMsgs = window.merakiToasts;
+    var toastEl = document.getElementById('fomoToast');
+    if (toastEl && Array.isArray(toastMsgs) && toastMsgs.length && !reduce) {
+      var ti = 0, shown = 0, MAX = 3;
+      var toastP = toastEl.querySelector('p');
+      var hideToast = function () { toastEl.classList.remove('show'); };
+      var showToast = function () {
+        if (shown >= MAX || ti >= toastMsgs.length) return;
+        toastP.textContent = toastMsgs[ti++]; shown++;
+        toastEl.classList.add('show');
+        setTimeout(hideToast, 7000);
+        if (shown < MAX && ti < toastMsgs.length) setTimeout(showToast, 26000);
+      };
+      var tc = toastEl.querySelector('.close');
+      if (tc) tc.addEventListener('click', function () { hideToast(); shown = MAX; });
+      setTimeout(showToast, 9000);
+    }
+
+    /* mobile buy-bar — hide while the shop (or footer) is on screen */
+    var bb = document.querySelector('.buybar');
+    if (bb && 'IntersectionObserver' in window) {
+      var watch = document.querySelectorAll('#tickets, .foot');
+      if (watch.length) {
+        var visible = new Set();
+        var bio = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { e.isIntersecting ? visible.add(e.target) : visible.delete(e.target); });
+          bb.classList.toggle('hide', visible.size > 0);
+        }, { threshold: .08 });
+        watch.forEach(function (el) { bio.observe(el); });
+      }
+    }
+
     /* lightbox — [data-video] and [data-img] triggers */
     var lb = document.getElementById('lb'), lbc = document.getElementById('lbContent');
     if (lb && lbc) {
