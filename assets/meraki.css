@@ -356,6 +356,13 @@ em{font-style:italic;color:var(--accent)}
 .rstub .who{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-400)}
 @media(max-width:880px){.trust-head{grid-template-columns:1fr;gap:1.4rem}.o3-grid{grid-template-columns:1fr}.rstub{transform:none!important}}
 
+/* reviews as a drifting strip of stubs (auto-scrolls, pauses on hover) */
+.rev-drift{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.rev-drift .track{display:flex;gap:1.5rem;width:max-content;animation:marquee 30s linear infinite}
+.rev-drift .track:hover{animation-play-state:paused}
+.rev-drift .rstub{flex:0 0 22rem;transform:none!important;margin:0}
+@media(max-width:760px){.rev-drift .rstub{flex-basis:18rem}}
+
 /* ---------- cta: giant ticket tear ---------- */
 .cta-ticket{background:var(--noir)}
 .bigticket{display:grid;grid-template-columns:1.6fr 1fr;background:linear-gradient(150deg,var(--slate),var(--charcoal));
@@ -566,7 +573,7 @@ em{font-style:italic;color:var(--accent)}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .anim,.rv{opacity:1!important;transform:none!important;animation:none!important}
-  .hero-media video,.hero-media .poster,.ticket,.marquee .track,
+  .hero-media video,.hero-media .poster,.ticket,.marquee .track,.rev-drift .track,
   .collage .core .play,.collage .p2::before{animation:none!important}
   *,*::before,*::after{transition-duration:.001s!important}
 }
