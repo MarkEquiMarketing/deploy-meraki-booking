@@ -399,6 +399,12 @@ em{font-style:italic;color:var(--accent)}
 .foot .fine a{color:var(--grey-300);border-bottom:1px solid var(--line)}
 .foot .copy{margin-top:1rem;font-family:var(--head);font-weight:500;font-size:.84rem;letter-spacing:.04em;color:var(--grey-500)}
 
+/* hero as an inset rounded stage — soft corners (r-xl), deliberately not a full pill */
+.hero.stage{min-height:calc(100svh - 6.8rem);margin:5.2rem clamp(.7rem,1.8vw,1.5rem) clamp(.7rem,1.8vw,1.5rem);
+  border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line-2);box-shadow:var(--shadow-lg)}
+.hero.stage .playbill{padding-top:clamp(3rem,7vh,4.5rem)}
+@media(max-width:760px){.hero.stage{margin-top:4.5rem;min-height:calc(100svh - 5.8rem)}}
+
 /* ---------- playbill hero (gig-poster composition) ---------- */
 .playbill{width:100%;text-align:center;padding:clamp(6rem,12vh,8rem) var(--pad) clamp(3rem,7vh,4.5rem)}
 .pb-pres{font-family:var(--mono);font-size:.78rem;letter-spacing:.34em;text-transform:uppercase;color:var(--silver)}
