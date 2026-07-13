@@ -43,38 +43,6 @@
     var v = document.querySelector('.hero-media video');
     if (v) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
 
-    /* floating embers */
-    var eb = document.getElementById('embers');
-    if (eb && !reduce) {
-      for (var i = 0; i < 16; i++) {
-        var s = document.createElement('i'), dur = 6 + Math.random() * 7;
-        s.style.left = (Math.random() * 100) + '%';
-        s.style.animationDuration = dur + 's';
-        s.style.animationDelay = (-Math.random() * dur) + 's';
-        s.style.transform = 'scale(' + (.6 + Math.random() * 1.4) + ')';
-        eb.appendChild(s);
-      }
-    }
-
-    /* fire cursor — embers trail the pointer and rise */
-    var fire = document.getElementById('fire');
-    if (fire && fine && !reduce) {
-      var last = 0;
-      addEventListener('pointermove', function (e) {
-        var now = performance.now();
-        if (now - last < 26) return;
-        last = now;
-        var sp = document.createElement('span');
-        sp.className = 'spark';
-        var sz = 3 + Math.random() * 6;
-        sp.style.left = e.clientX + 'px'; sp.style.top = e.clientY + 'px';
-        sp.style.width = sz + 'px'; sp.style.height = sz + 'px';
-        sp.style.setProperty('--dx', ((Math.random() - .5) * 46) + 'px');
-        fire.appendChild(sp);
-        setTimeout(function () { sp.remove(); }, 900);
-      }, { passive: true });
-    }
-
     /* 3D tilt cards + magnetic buttons (pointer-fine only) */
     if (fine && !reduce) {
       document.querySelectorAll('.tilt').forEach(function (card) {
@@ -116,6 +84,11 @@
       });
       document.querySelectorAll('[data-img]').forEach(function (el) {
         var go = function () { open('<img src="' + el.dataset.img + '" alt="' + (el.dataset.alt || '') + '">'); };
+        el.addEventListener('click', go);
+        el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+      });
+      document.querySelectorAll('[data-vimeo]').forEach(function (el) {
+        var go = function () { open('<iframe src="https://player.vimeo.com/video/' + el.dataset.vimeo + '?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>'); };
         el.addEventListener('click', go);
         el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
       });
