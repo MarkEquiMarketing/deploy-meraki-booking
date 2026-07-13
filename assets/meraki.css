@@ -427,6 +427,22 @@ em{font-style:italic;color:var(--accent)}
 .shop-frame .shop-foot a{color:var(--accent);margin-left:auto;white-space:nowrap}
 @media(max-width:760px){.shop-frame iframe{height:1250px}}
 
+/* buy flow — numbered steps around the shop (1 pick night, 2 seats+pay, 3 done) */
+.bstep{display:flex;gap:1.4rem;margin-bottom:2.2rem}
+.bstep:last-child{margin-bottom:0}
+.bstep>.n{flex:0 0 3.4rem;height:3.4rem;display:grid;place-items:center;border-radius:50%;background:var(--accent-soft);
+  border:1px solid var(--accent-line);font-family:var(--display);font-weight:700;font-size:1.7rem;color:var(--accent)}
+.bstep>.body{flex:1;min-width:0}
+.bstep h3{font-family:var(--head);font-weight:600;font-size:1.5rem;color:var(--white)}
+.nights.grid2{display:grid;grid-template-columns:1fr 1fr;justify-content:stretch}
+.nights.grid2 button{max-width:none}
+@media(max-width:700px){
+  .nights.grid2{grid-template-columns:1fr}
+  .bstep{gap:1rem}
+  .bstep>.n{flex-basis:2.8rem;height:2.8rem;font-size:1.4rem}
+  .bstep h3{font-size:1.3rem}
+}
+
 /* tier price (Devil Breeze metal) */
 .tier .price{font-family:var(--display);font-weight:700;font-size:2.2rem;margin:.6rem 0 .2rem;line-height:1;padding-block:.05em}
 .tier .price small{font-family:var(--head);font-weight:500;font-size:.8rem;letter-spacing:.06em;color:var(--mist);-webkit-text-fill-color:var(--mist)}

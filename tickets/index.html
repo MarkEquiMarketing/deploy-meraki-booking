@@ -76,35 +76,53 @@ fbq('track', 'PageView');
   </div>
 </div>
 
-<!-- TICKETS — choose your night + embedded shop -->
+<!-- TICKETS — three steps: pick night, pick seats, done -->
 <section class="section prize" id="tickets">
-  <div class="wrap">
+  <div class="wrap" style="max-width:72rem">
     <div class="intro rv" style="text-align:center;margin:0 auto 2.2rem">
       <span class="label">Tickets</span>
-      <h2 class="h2">Choose your <em>night</em></h2>
-      <p class="lead" style="margin-left:auto;margin-right:auto">Two performances, one weekend. Pick your night, pick your seats, and it is done in a minute.</p>
+      <h2 class="h2">Your tickets in three <em>steps</em></h2>
     </div>
 
-    <div class="count rv" data-until="2026-10-02" style="margin-bottom:2.4rem" aria-label="Countdown to the first night">
+    <div class="count rv" data-until="2026-10-02" style="margin-bottom:3rem" aria-label="Countdown to the first night">
       <div class="unit"><span class="n metal" data-u="days">00</span><span class="u">days</span></div>
       <div class="unit"><span class="n metal" data-u="hours">00</span><span class="u">hours</span></div>
       <div class="unit"><span class="n metal" data-u="mins">00</span><span class="u">minutes</span></div>
       <div class="unit"><span class="n metal" data-u="secs">00</span><span class="u">seconds</span></div>
     </div>
 
-    <div class="rv rv1" style="max-width:56rem;margin:0 auto">
-      <div class="nights" role="tablist" aria-label="Choose your night">
-        <button type="button" role="tab" data-pane="shop-fri" aria-selected="true"><span class="day">Friday</span><span class="date">2 October</span></button>
-        <button type="button" role="tab" data-pane="shop-sat" aria-selected="false"><span class="day">Saturday</span><span class="date">3 October</span></button>
+    <div class="bstep rv rv1">
+      <div class="n">1</div>
+      <div class="body">
+        <h3>Pick your night</h3>
+        <div class="nights grid2" role="tablist" aria-label="Choose your night" style="margin-top:1rem">
+          <button type="button" role="tab" data-pane="shop-fri" aria-selected="true"><span class="day">Friday</span><span class="date">2 October 2026</span></button>
+          <button type="button" role="tab" data-pane="shop-sat" aria-selected="false"><span class="day">Saturday</span><span class="date">3 October 2026</span></button>
+        </div>
       </div>
-      <div class="shop-frame">
-        <div class="pane" id="shop-fri">
-          <iframe src="https://sales.ticketing.cm.com/themerakishow-2-october" title="Buy tickets for Friday 2 October" loading="eager"></iframe>
+    </div>
+
+    <div class="bstep rv rv2">
+      <div class="n">2</div>
+      <div class="body">
+        <h3 style="margin-bottom:1rem">Pick your seats and pay</h3>
+        <div class="shop-frame">
+          <div class="pane" id="shop-fri">
+            <iframe src="https://sales.ticketing.cm.com/themerakishow-2-october" title="Buy tickets for Friday 2 October" loading="eager"></iframe>
+          </div>
+          <div class="pane" id="shop-sat" hidden>
+            <iframe data-src="https://sales.ticketing.cm.com/themerakishow-3-october" title="Buy tickets for Saturday 3 October"></iframe>
+          </div>
+          <div class="shop-foot"><i data-lucide="shield-check"></i> Secure checkout by CM <a href="https://sales.ticketing.cm.com/themerakishow-2-october" target="_blank" rel="noopener" data-shoplink>Prefer the full shop?</a></div>
         </div>
-        <div class="pane" id="shop-sat" hidden>
-          <iframe data-src="https://sales.ticketing.cm.com/themerakishow-3-october" title="Buy tickets for Saturday 3 October"></iframe>
-        </div>
-        <div class="shop-foot"><i data-lucide="shield-check"></i> Secure checkout by CM <a href="https://sales.ticketing.cm.com/themerakishow-2-october" target="_blank" rel="noopener" data-shoplink>Prefer the full shop?</a></div>
+      </div>
+    </div>
+
+    <div class="bstep rv rv3">
+      <div class="n">3</div>
+      <div class="body" style="align-self:center">
+        <h3>That is it</h3>
+        <p style="color:var(--mist);font-size:1.02rem;margin-top:.4rem">Your tickets land in your inbox. Parking (&euro;5) is sold separately in the shop for Arena and Inner Circle.</p>
       </div>
     </div>
   </div>
