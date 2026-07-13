@@ -92,22 +92,26 @@
       });
     }
 
-    /* countdown — <div class="count" data-until="2026-10-02"> */
+    /* countdown — <div class="count" data-until="2026-10-02"> (days/hours/mins/secs) */
     var cd = document.querySelector('.count[data-until]');
     if (cd) {
-      var units = ['days', 'hours', 'mins'];
+      var units = ['days', 'hours', 'mins', 'secs'];
       var tick = function () {
         var diff = new Date(cd.dataset.until + 'T00:00:00') - new Date();
         if (diff < 0) diff = 0;
-        var d = Math.floor(diff / 864e5), h = Math.floor(diff % 864e5 / 36e5), m = Math.floor(diff % 36e5 / 6e4);
-        var vals = { days: d, hours: h, mins: m };
+        var vals = {
+          days: Math.floor(diff / 864e5),
+          hours: Math.floor(diff % 864e5 / 36e5),
+          mins: Math.floor(diff % 36e5 / 6e4),
+          secs: Math.floor(diff % 6e4 / 1000)
+        };
         units.forEach(function (u) {
           var el = cd.querySelector('[data-u="' + u + '"]');
           if (el) el.textContent = String(vals[u]).padStart(2, '0');
         });
       };
       tick();
-      setInterval(tick, 30000);
+      setInterval(tick, 1000);
     }
 
     /* honest FOMO toasts — reads window.merakiToasts (array of strings) set by the page.
