@@ -76,6 +76,39 @@ fbq('track', 'PageView');
   </div>
 </div>
 
+<!-- TIERS — comparison table (bare, straight under the hero) -->
+<section class="section" style="background:var(--noir)">
+  <div class="wrap">
+    <div class="cmp rv">
+      <div class="cmp-col cmp-lab" aria-hidden="true">
+        <div class="cmp-cell"></div>
+        <div class="cmp-cell"><i data-lucide="armchair"></i> Your seat</div>
+        <div class="cmp-cell"><i data-lucide="utensils"></i> Food &amp; drink</div>
+        <div class="cmp-cell"><i data-lucide="ticket"></i> Price</div>
+      </div>
+      <div class="cmp-col">
+        <div class="cmp-cell cmp-th"><span class="lvl">Ringside</span><h4>The Arena</h4></div>
+        <div class="cmp-cell"><span class="m-lab">Your seat</span><p>Ringside, right at the arena. Close enough to feel the ground move.</p></div>
+        <div class="cmp-cell"><span class="m-lab">Food &amp; drink</span><p>Pop-up bar right there.</p></div>
+        <div class="cmp-cell cmp-price"><span class="m-lab">Price</span><span class="pr metal">&euro;49.95</span><a class="btn btn-g btn-sm" href="#tickets">Choose Arena</a></div>
+      </div>
+      <div class="cmp-col">
+        <div class="cmp-cell cmp-th"><span class="lvl">Skybox</span><h4>Inner Circle</h4></div>
+        <div class="cmp-cell"><span class="m-lab">Your seat</span><p>Skybox, with a view across the whole arena.</p></div>
+        <div class="cmp-cell"><span class="m-lab">Food &amp; drink</span><p>Wine and snacks included.</p></div>
+        <div class="cmp-cell cmp-price"><span class="m-lab">Price</span><span class="pr metal">&euro;80</span><a class="btn btn-g btn-sm" href="#tickets">Choose Inner Circle</a></div>
+      </div>
+      <div class="cmp-col cmp-vip">
+        <div class="cmp-cell cmp-th"><span class="tag">Full VIP</span><span class="lvl">Dinner &amp; show</span><h4>Chef's Table</h4></div>
+        <div class="cmp-cell"><span class="m-lab">Your seat</span><p>At the Chef's table, the complete evening.</p></div>
+        <div class="cmp-cell"><span class="m-lab">Food &amp; drink</span><p>Gourmet three course meal.</p></div>
+        <div class="cmp-cell cmp-price"><span class="m-lab">Price</span><span class="pr metal">&euro;160</span><a class="btn btn-p btn-sm" href="#tickets">Choose Chef's Table</a></div>
+      </div>
+    </div>
+    <p class="rv rv1" style="margin-top:1.6rem;font-size:.95rem;color:var(--grey-400);text-align:center">Parking tickets (&euro;5) are sold separately in the shop for Arena and Inner Circle guests.</p>
+  </div>
+</section>
+
 <!-- TICKETS — three steps: pick night, pick seats, done -->
 <section class="section prize" id="tickets">
   <div class="wrap" style="max-width:72rem">
@@ -120,49 +153,18 @@ fbq('track', 'PageView');
 
     <div class="bstep rv rv3">
       <div class="n">3</div>
-      <div class="body" style="align-self:center">
-        <h3>That is it</h3>
-        <p style="color:var(--mist);font-size:1.02rem;margin-top:.4rem">Your tickets land in your inbox. Parking (&euro;5) is sold separately in the shop for Arena and Inner Circle.</p>
+      <div class="body">
+        <h3 style="margin-bottom:1rem">That is it</h3>
+        <div class="card" style="display:flex;gap:1rem;align-items:center;padding:1.3rem 1.5rem">
+          <span style="width:2.7rem;height:2.7rem;display:grid;place-items:center;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent-line);flex-shrink:0"><i data-lucide="mail-check" style="color:var(--accent);width:1.2rem;height:1.2rem"></i></span>
+          <p style="margin:0;font-size:1.02rem;color:var(--cream)">Your tickets land straight in your inbox. Parking (&euro;5) is sold separately in the shop for Arena and Inner Circle.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
-
-<!-- TIERS — comparison table: what you get, side by side -->
-<section class="section" style="background:var(--noir)">
-  <div class="wrap">
-    <div class="intro rv"><span class="label">The experience</span><h2 class="h2">What you get, side by <em>side</em></h2><p class="lead">Every seat is part of the show. Choose how deep you want to go.</p></div>
-    <div class="cmp rv rv1" style="margin-top:2.6rem">
-      <div class="cmp-col cmp-lab" aria-hidden="true">
-        <div class="cmp-cell"></div>
-        <div class="cmp-cell"><i data-lucide="armchair"></i> Your seat</div>
-        <div class="cmp-cell"><i data-lucide="utensils"></i> Food &amp; drink</div>
-        <div class="cmp-cell"><i data-lucide="ticket"></i> Price</div>
-      </div>
-      <div class="cmp-col">
-        <div class="cmp-cell cmp-th"><span class="lvl">Ringside</span><h4>The Arena</h4></div>
-        <div class="cmp-cell"><span class="m-lab">Your seat</span><p>Ringside, right at the arena. Close enough to feel the ground move.</p></div>
-        <div class="cmp-cell"><span class="m-lab">Food &amp; drink</span><p>Pop-up bar right there.</p></div>
-        <div class="cmp-cell cmp-price"><span class="m-lab">Price</span><span class="pr metal">&euro;49.95</span><a class="btn btn-g btn-sm" href="#tickets">Choose Arena</a></div>
-      </div>
-      <div class="cmp-col">
-        <div class="cmp-cell cmp-th"><span class="lvl">Skybox</span><h4>Inner Circle</h4></div>
-        <div class="cmp-cell"><span class="m-lab">Your seat</span><p>Skybox, with a view across the whole arena.</p></div>
-        <div class="cmp-cell"><span class="m-lab">Food &amp; drink</span><p>Wine and snacks included.</p></div>
-        <div class="cmp-cell cmp-price"><span class="m-lab">Price</span><span class="pr metal">&euro;80</span><a class="btn btn-g btn-sm" href="#tickets">Choose Inner Circle</a></div>
-      </div>
-      <div class="cmp-col cmp-vip">
-        <div class="cmp-cell cmp-th"><span class="tag">Full VIP</span><span class="lvl">Dinner &amp; show</span><h4>Chef's Table</h4></div>
-        <div class="cmp-cell"><span class="m-lab">Your seat</span><p>At the Chef's table, the complete evening.</p></div>
-        <div class="cmp-cell"><span class="m-lab">Food &amp; drink</span><p>Gourmet three course meal.</p></div>
-        <div class="cmp-cell cmp-price"><span class="m-lab">Price</span><span class="pr metal">&euro;160</span><a class="btn btn-p btn-sm" href="#tickets">Choose Chef's Table</a></div>
-      </div>
-    </div>
-    <p class="rv rv2" style="margin-top:1.6rem;font-size:.95rem;color:var(--grey-400);text-align:center">Parking tickets (&euro;5) are sold separately in the shop for Arena and Inner Circle guests.</p>
-  </div>
-</section>
 
 <!-- THE EVENING — four acts as full-width tabs -->
 <section class="section venue-sec" id="evening">
@@ -338,7 +340,13 @@ fbq('track', 'PageView');
    CM Ticketing dashboard. First name only, no surnames. Update this list as sales come in.
    Format: {name:'Margot', qty:3, tier:'Arena', night:'Friday 2 October'}  (tier is optional) */
 window.merakiPurchases = [
-  /* {name:'Margot', qty:3, tier:'Arena', night:'Friday 2 October'}, */
+  /* == TEST ENTRIES for design verification only — REPLACE with real CM orders before ads run == */
+  {name:'Margot',    qty:3, tier:'Arena',        night:'Friday 2 October'},
+  {name:'Thomas',    qty:2, tier:"Chef's Table", night:'Saturday 3 October'},
+  {name:'Elise',     qty:4, tier:'Arena',        night:'Saturday 3 October'},
+  {name:'Wouter',    qty:2, tier:'Inner Circle', night:'Friday 2 October'},
+  {name:'Charlotte', qty:1, tier:'Arena',        night:'Friday 2 October'},
+  {name:'Lars',      qty:2, tier:'Inner Circle', night:'Saturday 3 October'}
 ];
 </script>
 
