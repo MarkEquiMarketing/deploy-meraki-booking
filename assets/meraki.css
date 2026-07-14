@@ -440,15 +440,15 @@ em{font-style:italic;color:var(--accent)}
 .cta-ticket{background:var(--noir)}
 .bigticket{display:grid;grid-template-columns:1.6fr 1fr;background:linear-gradient(150deg,var(--slate),var(--charcoal));
   border:1px solid var(--accent-line);border-radius:var(--r-lg);box-shadow:var(--glow);overflow:hidden;position:relative}
-.bigticket .main{padding:clamp(2rem,4vw,3.4rem)}
+.bigticket .main{padding:clamp(1.7rem,3.2vw,2.6rem)}
 .bigticket .main h2{font-family:var(--head);font-weight:300;font-size:var(--fs-h2);color:var(--white);letter-spacing:-.02em;margin-top:.3rem}
 .bigticket .main h2 em{font-style:normal;color:var(--accent);font-weight:600}
 .bigticket .main p{color:var(--cream);margin:1.1rem 0 1.9rem;max-width:33rem;font-size:var(--fs-lead);font-weight:300}
-.bigticket .stub{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;
-  padding:2rem;border-left:2px dashed var(--accent-line);background:radial-gradient(120% 100% at 50% 0%,rgba(18,181,198,.16),transparent)}
+.bigticket .stub{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;text-align:center;
+  padding:1.6rem;border-left:2px dashed var(--accent-line);background:radial-gradient(120% 100% at 50% 0%,rgba(18,181,198,.16),transparent)}
 .bigticket .stub::before,.bigticket .stub::after{content:"";position:absolute;left:-13px;width:26px;height:26px;background:var(--noir);border-radius:50%}
 .bigticket .stub::before{top:-13px}.bigticket .stub::after{bottom:-13px}
-.bigticket .stub .big{font-family:var(--display);font-weight:700;font-size:clamp(7.5rem,14vw,12.5rem);line-height:1;padding-block:.05em}
+.bigticket .stub .big{font-family:var(--display);font-weight:700;font-size:clamp(5rem,9.5vw,8.5rem);line-height:1;padding-block:.05em}
 .bigticket .stub .sm{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);line-height:1.8}
 @media(max-width:760px){.bigticket{grid-template-columns:1fr}
   .bigticket .stub{border-left:0;border-top:2px dashed var(--accent-line)}
