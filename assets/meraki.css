@@ -280,6 +280,42 @@ em{font-style:italic;color:var(--accent)}
 .tier p{font-size:.95rem;color:var(--mist);line-height:1.55}
 @media(max-width:760px){.tiers{grid-template-columns:1fr}}
 
+/* ---------- tier comparison table ("what you get, side by side") ---------- */
+.cmp{display:grid;grid-template-columns:.9fr repeat(3,1fr);grid-template-rows:auto auto auto auto;
+  background:linear-gradient(165deg,rgba(27,33,43,.55),rgba(11,14,19,.75));border:1px solid var(--line-2);
+  border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow)}
+.cmp-col{display:grid;grid-template-rows:subgrid;grid-row:1/5}
+.cmp-cell{padding:1.5rem 1.6rem;border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+  display:flex;flex-direction:column;justify-content:center;gap:.25rem}
+.cmp-col:last-child .cmp-cell{border-right:0}
+.cmp-cell:last-child{border-bottom:0}
+.cmp-lab .cmp-cell{flex-direction:row;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.66rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--grey-400)}
+.cmp-lab svg{width:1.05rem;height:1.05rem;color:var(--accent);flex-shrink:0}
+.cmp-th .lvl{font-family:var(--head);font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.cmp-th h4{font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,2vw,1.7rem);color:var(--white);letter-spacing:.01em}
+.cmp-cell p{font-size:.98rem;color:var(--cream);line-height:1.5;margin:0}
+.cmp-price .pr{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1;padding-block:.05em}
+.cmp-price .btn{margin-top:.9rem;align-self:flex-start}
+/* the VIP column */
+.cmp-vip{position:relative;background:linear-gradient(180deg,rgba(18,181,198,.1),rgba(18,181,198,.03));box-shadow:inset 0 0 0 1px var(--accent-line)}
+.cmp-vip .cmp-cell:first-child{position:relative}
+.cmp-vip .tag{position:absolute;top:.9rem;right:.9rem;font-family:var(--head);font-weight:700;font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:#04181C;background:var(--accent);padding:.28rem .7rem;border-radius:var(--r-pill)}
+.cmp-col:not(.cmp-lab):hover{background:rgba(18,181,198,.05)}
+/* mobile: each tier becomes a card, labels move inside the cells */
+.cmp-cell .m-lab{display:none}
+@media(max-width:820px){
+  .cmp{display:block;background:none;border:0;box-shadow:none;border-radius:0;overflow:visible}
+  .cmp-col.cmp-lab{display:none}
+  .cmp-col{display:block;background:linear-gradient(165deg,var(--slate),var(--charcoal));border:1px solid var(--line-2);
+    border-radius:var(--r-lg);overflow:hidden;margin-bottom:1.1rem;box-shadow:var(--shadow)}
+  .cmp-vip{border-color:var(--accent);box-shadow:var(--glow)}
+  .cmp-cell{border-right:0}
+  .cmp-cell .m-lab{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-400);margin-bottom:.35rem}
+  .cmp-price .btn{align-self:stretch;justify-content:center}
+}
+
 /* ---------- venue: the total experience ---------- */
 .venue-sec{background:var(--black)}
 .venue-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
