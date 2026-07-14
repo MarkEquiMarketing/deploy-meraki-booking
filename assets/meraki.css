@@ -169,10 +169,13 @@ em{font-style:italic;color:var(--accent)}
 .rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}.rv4{transition-delay:.32s}
 .rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}.rv-d4{transition-delay:.32s}
 
-/* ---------- top bar ---------- */
-.topbar{position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  padding:.85rem clamp(1rem,4vw,3.5rem);transition:background var(--t),backdrop-filter var(--t),border-color var(--t);border-bottom:1px solid transparent}
-.topbar.scrolled{background:rgba(6,8,11,.74);backdrop-filter:blur(16px) saturate(1.2);border-bottom-color:var(--line)}
+/* ---------- top bar — floating pill ---------- */
+.topbar{position:fixed;top:.8rem;left:.8rem;right:.8rem;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.6rem clamp(.9rem,2.4vw,1.5rem);border-radius:var(--r-pill);border:1px solid var(--line);
+  background:rgba(6,8,11,.5);backdrop-filter:blur(14px) saturate(1.15);
+  transition:background var(--t),border-color var(--t),box-shadow var(--t)}
+.topbar.scrolled{background:rgba(6,8,11,.8);border-color:var(--line-2);box-shadow:var(--shadow)}
+@media(max-width:760px){.topbar{top:.55rem;left:.55rem;right:.55rem;padding:.5rem .6rem .5rem 1rem}}
 .topbar .logo{height:clamp(32px,3.6vw,44px);width:auto;filter:drop-shadow(0 2px 12px rgba(0,0,0,.6))}
 .topbar .tag{font-family:var(--head);font-weight:600;font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
 .topbar .tb-right{display:flex;align-items:center;gap:1.25rem}
@@ -441,12 +444,6 @@ em{font-style:italic;color:var(--accent)}
 .foot .fine{margin-top:var(--sec);padding-top:1.6rem;border-top:1px solid var(--line);font-size:.84rem;color:var(--grey-500);line-height:1.8;max-width:52rem}
 .foot .fine a{color:var(--grey-300);border-bottom:1px solid var(--line)}
 .foot .copy{margin-top:1rem;font-family:var(--head);font-weight:500;font-size:.84rem;letter-spacing:.04em;color:var(--grey-500)}
-
-/* hero as an inset rounded stage — soft corners (r-xl), deliberately not a full pill */
-.hero.stage{min-height:calc(100svh - 6.8rem);margin:5.2rem clamp(.7rem,1.8vw,1.5rem) clamp(.7rem,1.8vw,1.5rem);
-  border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line-2);box-shadow:var(--shadow-lg)}
-.hero.stage .playbill{padding-top:clamp(3rem,7vh,4.5rem)}
-@media(max-width:760px){.hero.stage{margin-top:4.5rem;min-height:calc(100svh - 5.8rem)}}
 
 /* ---------- playbill hero (gig-poster composition) ---------- */
 .playbill{width:100%;text-align:center;padding:clamp(6rem,12vh,8rem) var(--pad) clamp(3rem,7vh,4.5rem)}
