@@ -332,18 +332,13 @@ fbq('track', 'PageView');
   <button class="close" aria-label="Dismiss">&times;</button>
 </div>
 <script>
-/* FOMO purchase notifications — "Margot just got 3 Arena tickets for Friday 2 October."
+/* Purchase notifications — "Margot just got 3 Arena tickets for Friday 2 October."
+   ONLY real purchases show here; while this list is empty, NO notifications appear at all.
    IMPORTANT (NL/BE law: no fabricated social proof): only add REAL buyers, copied from the
    CM Ticketing dashboard. First name only, no surnames. Update this list as sales come in.
-   Format: {name:'Margot', qty:3, tier:'Arena', night:'Friday 2 October'}  (tier is optional)
-   While this list is empty, the generic true messages below are shown instead. */
+   Format: {name:'Margot', qty:3, tier:'Arena', night:'Friday 2 October'}  (tier is optional) */
 window.merakiPurchases = [
   /* {name:'Margot', qty:3, tier:'Arena', night:'Friday 2 October'}, */
-];
-window.merakiToasts = [
-  "Tickets are on sale now. Two nights only, and no third night.",
-  "The Arena, Inner Circle and Chef's Table are all open for both nights.",
-  "Parking tickets are sold separately in the shop for Arena and Inner Circle."
 ];
 </script>
 
