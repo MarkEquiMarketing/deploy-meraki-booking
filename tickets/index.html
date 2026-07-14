@@ -246,29 +246,21 @@ fbq('track', 'PageView');
 <!-- FOOTAGE — see it to believe it (Fin: "nothing sells this show like the footage") -->
 <section class="section reel-sec" id="watch">
   <div class="wrap">
-    <div class="intro rv" style="text-align:center;margin:0 auto 2.2rem">
-      <span class="label">The footage</span>
-      <h2 class="h2">You have to see it to <em>believe it</em></h2>
-      <p class="lead" style="margin-left:auto;margin-right:auto">Fire in the dark, horses in full freedom, bodies in the air. Words do not do it justice, so watch.</p>
-    </div>
-    <!-- Featured: the Hunted trailer (proven Vimeo cut, same as the hero) -->
-    <div class="reel-feat rv rv1" data-vimeo="1209533346" role="button" tabindex="0" aria-label="Watch the trailer">
-      <img src="/preregistration/assets/finale.jpg" alt="Meraki Inspirations trailer">
-      <span class="reel-play"><i data-lucide="play"></i></span>
-      <div class="cap"><h3>Watch the trailer</h3><span class="dur">Two nights only</span></div>
-    </div>
-    <!-- Clips: labels are feeling-led (safe for any cut); relabel to match each clip once confirmed.
+    <!-- Content only (no header, per request). Featured trailer + playlist of clips, all open the lightbox.
          NOTE: 929272555 / 931442460 are privacy-restricted on Vimeo — add booking.meraki.show +
-         design-meraki.vercel.app to the video's allowed domains, or swap for public cuts. -->
-    <div class="reel-grid rv rv2">
-      <div class="reel-card" data-vimeo="929272555" role="button" tabindex="0" aria-label="Watch a clip">
-        <img src="/preregistration/assets/fire.jpg" alt=""><span class="reel-play"><i data-lucide="play"></i></span><span class="lb2">Fire in the night</span>
+         design-meraki.vercel.app to the video's allowed domains, or swap for public cuts.
+         Clip labels are feeling-led; relabel to match each clip once confirmed. -->
+    <div class="reel-split rv">
+      <div class="reel-feat" data-vimeo="1209533346" role="button" tabindex="0" aria-label="Watch the trailer">
+        <img src="/preregistration/assets/finale.jpg" alt="Meraki Inspirations trailer">
+        <span class="reel-play"><i data-lucide="play"></i></span>
+        <div class="cap"><h3>Watch the trailer</h3><span class="dur">Two nights only</span></div>
       </div>
-      <div class="reel-card" data-vimeo="931442460" role="button" tabindex="0" aria-label="Watch a clip">
-        <img src="/preregistration/assets/aerial.jpg" alt=""><span class="reel-play"><i data-lucide="play"></i></span><span class="lb2">Bodies in the air</span>
-      </div>
-      <div class="reel-card" data-video="https://meraki.show/wp-content/uploads/2025/04/2021_09_Meraki_1.mp4" role="button" tabindex="0" aria-label="Watch a clip">
-        <img src="/preregistration/assets/liberty.jpg" alt=""><span class="reel-play"><i data-lucide="play"></i></span><span class="lb2">Horses in freedom</span>
+      <div class="reel-list">
+        <div class="reel-item" data-vimeo="929272555" role="button" tabindex="0" aria-label="Watch a clip"><div class="reel-thumb"><img src="/preregistration/assets/fire.jpg" alt=""><span class="pp"><i data-lucide="play"></i></span></div><div><div class="m">Fire in the night</div><div class="s">Clip</div></div></div>
+        <div class="reel-item" data-vimeo="931442460" role="button" tabindex="0" aria-label="Watch a clip"><div class="reel-thumb"><img src="/preregistration/assets/aerial.jpg" alt=""><span class="pp"><i data-lucide="play"></i></span></div><div><div class="m">Bodies in the air</div><div class="s">Clip</div></div></div>
+        <div class="reel-item" data-video="https://meraki.show/wp-content/uploads/2025/04/2021_09_Meraki_1.mp4" role="button" tabindex="0" aria-label="Watch a clip"><div class="reel-thumb"><img src="/preregistration/assets/liberty.jpg" alt=""><span class="pp"><i data-lucide="play"></i></span></div><div><div class="m">Horses in freedom</div><div class="s">Clip</div></div></div>
+        <div class="reel-item" data-vimeo="1063838668" role="button" tabindex="0" aria-label="Watch a clip"><div class="reel-thumb"><img src="/preregistration/assets/trick.jpg" alt=""><span class="pp"><i data-lucide="play"></i></span></div><div><div class="m">Trust, no words</div><div class="s">Clip</div></div></div>
       </div>
     </div>
   </div>
