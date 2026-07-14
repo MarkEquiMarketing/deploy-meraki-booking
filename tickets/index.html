@@ -164,28 +164,83 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- THE EVENING — venue-led, as if you are there -->
-<section class="section venue-sec">
-  <div class="wrap venue-grid">
-    <div class="rv">
+<!-- THE EVENING — four acts as full-width tabs -->
+<section class="section venue-sec" id="evening">
+  <div class="wrap">
+    <div class="intro rv" style="text-align:center;margin:0 auto 2rem">
       <span class="label">The evening</span>
       <h2 class="h2">From the first glass to the last <em>goosebumps</em></h2>
-      <p class="lead">This is not a show you drive to, watch and leave. De Blauwe Zaal is a destination, and your ticket is the whole evening.</p>
-      <div class="timeline">
-        <div class="tl-step"><div class="dot"><i data-lucide="map-pin"></i></div><div><strong>You arrive at De Blauwe Zaal</strong><p>Just outside Bruges, in Sint Kruis. The doors open, the room is already humming.</p></div></div>
-        <div class="tl-step"><div class="dot"><i data-lucide="utensils"></i></div><div><strong>Dinner, wine or a drink at the bar</strong><p>Chef's Table guests sit down for a gourmet three course meal. Inner Circle finds wine and snacks in the Skybox. Arena has the pop-up bar right at the ring.</p></div></div>
-        <div class="tl-step"><div class="dot"><i data-lucide="sparkles"></i></div><div><strong>The lights drop</strong><p>Some of the best performers, artists and riders in Europe, in a show that gets under your skin. We will not spoil what happens.</p></div></div>
-        <div class="tl-step"><div class="dot"><i data-lucide="martini"></i></div><div><strong>You stay a little longer</strong><p>The Club House bar is there to hold onto the feeling. Nobody leaves straight away.</p></div></div>
-      </div>
+      <p class="lead" style="margin-left:auto;margin-right:auto">One ticket is a whole evening. Click through the four acts of your night.</p>
     </div>
-    <div class="venue-shots rv rv1">
-      <!-- PLACEHOLDER venue/food visuals: swap for the real De Blauwe Zaal + dining photos when they arrive -->
-      <figure><img src="/preregistration/assets/hero.jpg" alt="An evening at Meraki Inspirations"></figure>
-      <figure><img src="/preregistration/assets/finale.jpg" alt="The arena at De Blauwe Zaal"></figure>
-      <figure><img src="/preregistration/assets/fire.jpg" alt="Inside the show"></figure>
+    <div class="evtabs rv rv1" id="evTabs" role="tablist" aria-label="The evening"></div>
+    <div class="evpanel rv rv1">
+      <div class="fade-sw" id="evTx"><span class="evk"></span><h3></h3><p class="lead2"></p><p class="more"></p><div class="chips"></div></div>
+      <div class="evpics fade-sw" id="evPics"></div>
+    </div>
+    <div class="evnav rv rv2">
+      <button type="button" data-d="-1" aria-label="Previous act"><i data-lucide="chevron-left"></i></button>
+      <span class="cnt" id="evCnt"></span>
+      <button type="button" data-d="1" aria-label="Next act"><i data-lucide="chevron-right"></i></button>
     </div>
   </div>
 </section>
+<script>
+/* The evening, in four acts — sourced copy only.
+   PLACEHOLDER photos: swap for the real De Blauwe Zaal venue/dining shots when they arrive. */
+(function () {
+  var A = '/preregistration/assets/';
+  var ACTS = [
+    { rn:'I', icon:'map-pin', cap:'Arrival', t:'You arrive at De Blauwe Zaal',
+      lead:'Just outside Bruges, in Sint Kruis, De Blauwe Zaal waits at the end of a quiet road. This is not a hall you hire for a night. It is a destination, with its own restaurant, its own Belgian wine and its own stables.',
+      more:'The doors open and the room is already humming. Coats away, a first glass in hand, and the growing feeling that tonight is not going to be a normal night.',
+      chips:['De Blauwe Zaal','Sint Kruis, Bruges','2 & 3 October 2026'],
+      imgs:[A+'hero.jpg', A+'finale.jpg', A+'liberty.jpg'] },
+    { rn:'II', icon:'utensils', cap:'Dine', t:'Dinner, wine or a drink at the bar',
+      lead:'Every ticket eats and drinks differently. Chef’s Table guests sit down for a gourmet three course meal before the show. Inner Circle finds wine and snacks waiting up in the Skybox.',
+      more:'Arena guests order at the pop-up bar right at the ring, glass in hand while the room fills. The house pours its own Belgian wine, Merula, from its own restaurant, Zevensterre.',
+      chips:['Chef’s Table · €160','Inner Circle · €80','The Arena · €49.95'],
+      imgs:[A+'fire.jpg', A+'hero.jpg', A+'aerial.jpg'] },
+    { rn:'III', icon:'sparkles', cap:'The show', t:'The lights drop',
+      lead:'Meraki Inspirations is built around the power of dreams. A young man dreams of a world where he is free, full of mystical creatures and a deep trust between horse and human.',
+      more:'Some of the best performers, artists and riders in Europe bring that dream to life, in an unconventional, deeply immersive equestrian theatre spectacle. We will not spoil what happens. Past guests rate it 4.8 out of 5.',
+      chips:['Rated 4.8 by guests','Two nights only'],
+      imgs:[A+'finale.jpg', A+'aerial.jpg', A+'trick.jpg'] },
+    { rn:'IV', icon:'martini', cap:'Afterwards', t:'You stay a little longer',
+      lead:'The lights come up and nobody reaches for their coat. The Club House bar is there to hold onto the feeling, glass by glass, story by story.',
+      more:'This is the part guests talk about afterwards, the night that did not end when the show did. As one guest put it, an evening I will never forget.',
+      chips:['Club House bar','Two nights only'],
+      imgs:[A+'aerial.jpg', A+'liberty.jpg', A+'trick.jpg'] }
+  ];
+  var tabs = document.getElementById('evTabs'), tx = document.getElementById('evTx'),
+      pics = document.getElementById('evPics'), cnt = document.getElementById('evCnt'), idx = 0;
+  ACTS.forEach(function (a, i) {
+    var b = document.createElement('button'); b.className = 'evtab'; b.type = 'button'; b.setAttribute('role', 'tab');
+    b.innerHTML = '<i data-lucide="' + a.icon + '"></i>' + a.cap;
+    b.addEventListener('click', function () { go(i); });
+    tabs.appendChild(b);
+  });
+  function fill() {
+    var a = ACTS[idx];
+    tabs.querySelectorAll('.evtab').forEach(function (b, j) { b.setAttribute('aria-selected', j === idx ? 'true' : 'false'); });
+    tx.querySelector('.evk').textContent = 'Act ' + a.rn + ' · ' + a.cap;
+    tx.querySelector('h3').textContent = a.t;
+    tx.querySelector('.lead2').textContent = a.lead;
+    tx.querySelector('.more').textContent = a.more;
+    tx.querySelector('.chips').innerHTML = a.chips.map(function (c) { return '<span class="chip">' + c + '</span>'; }).join('');
+    pics.innerHTML = a.imgs.map(function (s) { return '<div><img loading="lazy" src="' + s + '" alt="' + a.t + '"></div>'; }).join('');
+    cnt.textContent = 'Act ' + (idx + 1) + ' of ' + ACTS.length;
+  }
+  function go(i) {
+    idx = (i + ACTS.length) % ACTS.length;
+    [tx, pics].forEach(function (e) { e.classList.add('out'); });
+    setTimeout(function () { fill(); [tx, pics].forEach(function (e) { e.classList.remove('out'); }); }, 380);
+  }
+  document.querySelectorAll('.evnav [data-d]').forEach(function (b) {
+    b.addEventListener('click', function () { go(idx + +b.dataset.d); });
+  });
+  fill();
+})();
+</script>
 
 <div class="divider"></div>
 
