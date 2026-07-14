@@ -6,20 +6,23 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Tickets · Meraki Inspirations · 2 and 3 October 2026, Bruges</title>
 <meta name="description" content="Tickets from €49.95. Meraki Inspirations plays De Blauwe Zaal near Bruges on 2 and 3 October 2026, two nights only. Choose your night and secure your seats.">
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel (consent-gated — loads ONLY after the visitor accepts cookies) -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1044255798355538');
-fbq('track', 'PageView');
+window.merakiLoadPixel = function () {
+  if (window._merakiPixel) return; window._merakiPixel = true;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1044255798355538');
+  fbq('track', 'PageView');
+};
 </script>
-<!-- End Meta Pixel Code -->
+<!-- End Meta Pixel -->
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <meta property="og:title" content="Tickets · Meraki Inspirations · 2 and 3 October 2026">
 <meta property="og:description" content="Two nights only at De Blauwe Zaal near Bruges. Tickets from €49.95. Choose your night and secure your seats.">
@@ -33,7 +36,6 @@ fbq('track', 'PageView');
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 </head>
 <body>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1044255798355538&ev=PageView&noscript=1" alt=""/></noscript>
 <a class="skip" href="#tickets">Skip to tickets</a>
 <div class="grain" aria-hidden="true"></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -184,21 +186,23 @@ fbq('track', 'PageView');
   </div>
 </section>
 <script>
-/* The evening, in four acts — sourced copy only.
-   PLACEHOLDER photos: swap for the real De Blauwe Zaal venue/dining shots when they arrive. */
+/* The evening, in four acts. Real De Blauwe Zaal (venue) + Zevensterre (restaurant) photography,
+   real show photos for the show, sourced copy only. Dine has a playable food/wine clip. */
 (function () {
-  var A = '/preregistration/assets/';
+  var A = '/preregistration/assets/';   /* real show photos */
+  var V = '/assets/venue/';             /* real venue + restaurant photos */
   var ACTS = [
     { rn:'I', icon:'map-pin', cap:'Arrival', t:'You arrive at De Blauwe Zaal',
       lead:'Just outside Bruges, in Sint Kruis, De Blauwe Zaal waits at the end of a quiet road. This is not a hall you hire for a night. It is a destination, with its own restaurant, its own Belgian wine and its own stables.',
       more:'The doors open and the room is already humming. Coats away, a first glass in hand, and the growing feeling that tonight is not going to be a normal night.',
       chips:['De Blauwe Zaal','Sint Kruis, Bruges','2 & 3 October 2026'],
-      imgs:[A+'hero.jpg', A+'finale.jpg', A+'liberty.jpg'] },
+      imgs:[V+'blauwe-zaal-1.jpg', V+'blauwe-zaal-2.jpg', V+'blauwe-zaal-3.jpg'] },
     { rn:'II', icon:'utensils', cap:'Dine', t:'Dinner, wine or a drink at the bar',
       lead:'Every ticket eats and drinks differently. Chef’s Table guests sit down for a gourmet three course meal before the show. Inner Circle finds wine and snacks waiting up in the Skybox.',
       more:'Arena guests order at the pop-up bar right at the ring, glass in hand while the room fills. The house pours its own Belgian wine, Merula, from its own restaurant, Zevensterre.',
       chips:['Chef’s Table · €160','Inner Circle · €80','The Arena · €49.95'],
-      imgs:[A+'fire.jpg', A+'hero.jpg', A+'aerial.jpg'] },
+      video:'1209607428',
+      imgs:[V+'zevensterre-1.webp', V+'zevensterre-2.webp', V+'zevensterre-3.webp'] },
     { rn:'III', icon:'sparkles', cap:'The show', t:'The lights drop',
       lead:'Meraki Inspirations is built around the power of dreams. A young man dreams of a world where he is free, full of mystical creatures and a deep trust between horse and human.',
       more:'Some of the best performers, artists and riders in Europe bring that dream to life, in an unconventional, deeply immersive equestrian theatre spectacle. We will not spoil what happens. Past guests rate it 4.8 out of 5.',
@@ -208,7 +212,7 @@ fbq('track', 'PageView');
       lead:'The lights come up and nobody reaches for their coat. The Club House bar is there to hold onto the feeling, glass by glass, story by story.',
       more:'This is the part guests talk about afterwards, the night that did not end when the show did. As one guest put it, an evening I will never forget.',
       chips:['Club House bar','Two nights only'],
-      imgs:[A+'aerial.jpg', A+'liberty.jpg', A+'trick.jpg'] }
+      imgs:[A+'fire.jpg', V+'zevensterre-1.webp', A+'liberty.jpg'] }
   ];
   var tabs = document.getElementById('evTabs'), tx = document.getElementById('evTx'),
       pics = document.getElementById('evPics'), cnt = document.getElementById('evCnt'), idx = 0;
@@ -226,7 +230,25 @@ fbq('track', 'PageView');
     tx.querySelector('.lead2').textContent = a.lead;
     tx.querySelector('.more').textContent = a.more;
     tx.querySelector('.chips').innerHTML = a.chips.map(function (c) { return '<span class="chip">' + c + '</span>'; }).join('');
-    pics.innerHTML = a.imgs.map(function (s) { return '<div><img loading="lazy" src="' + s + '" alt="' + a.t + '"></div>'; }).join('');
+    pics.innerHTML = a.imgs.map(function (s, k) {
+      var play = (a.video && k === 0) ? '<span class="reel-play"><i data-lucide="play"></i></span>' : '';
+      var cls = (a.video && k === 0) ? ' class="ev-vid" role="button" tabindex="0" aria-label="Watch the dinner"' : '';
+      return '<div' + cls + '><img loading="lazy" src="' + s + '" alt="' + a.t + '">' + play + '</div>';
+    }).join('');
+    if (a.video) {
+      var trig = pics.querySelector('.ev-vid');
+      if (trig) {
+        var openVid = function () {
+          var lb = document.getElementById('lb'), lbc = document.getElementById('lbContent');
+          if (!lb || !lbc) return;
+          lbc.innerHTML = '<iframe src="https://player.vimeo.com/video/' + a.video + '?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+          lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+        };
+        trig.addEventListener('click', openVid);
+        trig.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openVid(); } });
+      }
+    }
+    if (window.lucide && lucide.createIcons) lucide.createIcons();
     cnt.textContent = 'Act ' + (idx + 1) + ' of ' + ACTS.length;
   }
   function go(i) {
@@ -267,16 +289,18 @@ fbq('track', 'PageView');
          design-meraki.vercel.app to the video's allowed domains, or swap for public cuts.
          Clip labels are feeling-led; relabel to match each clip once confirmed. -->
     <div class="reel-split rv">
+      <!-- Teaser video stays (the Hunted hero cut). The rest of the section is photos. -->
       <div class="reel-feat" data-vimeo="1209533346" role="button" tabindex="0" aria-label="Watch the trailer">
         <img src="/preregistration/assets/finale.jpg" alt="Meraki Inspirations trailer">
         <span class="reel-play"><i data-lucide="play"></i></span>
         <div class="cap"><h3>Watch the trailer</h3><span class="dur">Two nights only</span></div>
       </div>
-      <div class="reel-list">
-        <div class="reel-item" data-vimeo="929272555" role="button" tabindex="0" aria-label="Watch a clip"><div class="reel-thumb"><img src="/preregistration/assets/fire.jpg" alt=""><span class="pp"><i data-lucide="play"></i></span></div><div><div class="m">Fire in the night</div><div class="s">Clip</div></div></div>
-        <div class="reel-item" data-vimeo="931442460" role="button" tabindex="0" aria-label="Watch a clip"><div class="reel-thumb"><img src="/preregistration/assets/aerial.jpg" alt=""><span class="pp"><i data-lucide="play"></i></span></div><div><div class="m">Bodies in the air</div><div class="s">Clip</div></div></div>
-        <div class="reel-item" data-video="https://meraki.show/wp-content/uploads/2025/04/2021_09_Meraki_1.mp4" role="button" tabindex="0" aria-label="Watch a clip"><div class="reel-thumb"><img src="/preregistration/assets/liberty.jpg" alt=""><span class="pp"><i data-lucide="play"></i></span></div><div><div class="m">Horses in freedom</div><div class="s">Clip</div></div></div>
-        <div class="reel-item" data-vimeo="1063838668" role="button" tabindex="0" aria-label="Watch a clip"><div class="reel-thumb"><img src="/preregistration/assets/trick.jpg" alt=""><span class="pp"><i data-lucide="play"></i></span></div><div><div class="m">Trust, no words</div><div class="s">Clip</div></div></div>
+      <!-- Photo gallery: real show photos, open full-size in the lightbox via data-img -->
+      <div class="reel-gallery">
+        <div class="vidph" data-img="/preregistration/assets/aerial.jpg" data-alt="Above the ring"><img loading="lazy" src="/preregistration/assets/aerial.jpg" alt="Above the ring"><span class="exp"><i data-lucide="expand"></i></span></div>
+        <div class="vidph" data-img="/preregistration/assets/fire.jpg" data-alt="Fire in the night"><img loading="lazy" src="/preregistration/assets/fire.jpg" alt="Fire in the night"><span class="exp"><i data-lucide="expand"></i></span></div>
+        <div class="vidph" data-img="/preregistration/assets/liberty.jpg" data-alt="Horses in freedom"><img loading="lazy" src="/preregistration/assets/liberty.jpg" alt="Horses in freedom"><span class="exp"><i data-lucide="expand"></i></span></div>
+        <div class="vidph" data-img="/preregistration/assets/trick.jpg" data-alt="Trust, no words"><img loading="lazy" src="/preregistration/assets/trick.jpg" alt="Trust, no words"><span class="exp"><i data-lucide="expand"></i></span></div>
       </div>
     </div>
   </div>
@@ -358,6 +382,15 @@ fbq('track', 'PageView');
     <p class="copy">&copy; 2026 The Meraki Horse Show &middot; Meraki Inspirations</p>
   </div>
 </footer>
+
+<!-- COOKIE CONSENT (gates the Meta Pixel; the ticket shop always works) -->
+<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p>We use cookies to measure our ads and improve this page. The ticket shop works either way. <a href="#">Privacy</a></p>
+  <div class="cookie-btns">
+    <button class="btn btn-g btn-sm" type="button" data-decline>Decline</button>
+    <button class="btn btn-p btn-sm" type="button" data-accept>Accept</button>
+  </div>
+</div>
 
 <!-- LIGHTBOX (video/vimeo playback) -->
 <div class="lb" id="lb" aria-hidden="true">

@@ -6,20 +6,23 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Win 2 free tickets to Meraki Inspirations</title>
 <meta name="description" content="Two unforgettable nights at De Blauwe Zaal near Bruges, 2 and 3 October 2026. Pre register for your chance to win 2 free tickets to Meraki Inspirations, the total experience.">
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel (consent-gated — loads ONLY after the visitor accepts cookies) -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1044255798355538');
-fbq('track', 'PageView');
+window.merakiLoadPixel = function () {
+  if (window._merakiPixel) return; window._merakiPixel = true;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1044255798355538');
+  fbq('track', 'PageView');
+};
 </script>
-<!-- End Meta Pixel Code -->
+<!-- End Meta Pixel -->
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <meta property="og:title" content="Win 2 free tickets to Meraki Inspirations">
 <meta property="og:description" content="Two unforgettable nights at De Blauwe Zaal near Bruges, 2 and 3 October 2026. Pre register for your chance to win.">
@@ -33,7 +36,6 @@ fbq('track', 'PageView');
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 </head>
 <body>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1044255798355538&ev=PageView&noscript=1" alt=""/></noscript>
 <a class="skip" href="#enter">Skip to registration</a>
 <div class="grain" aria-hidden="true"></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -242,6 +244,15 @@ fbq('track', 'PageView');
 </footer>
 
 <!-- LIGHTBOX -->
+<!-- COOKIE CONSENT (gates the Meta Pixel; the giveaway form always works) -->
+<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p>We use cookies to measure our ads and improve this page. The giveaway form works either way. <a href="#">Privacy</a></p>
+  <div class="cookie-btns">
+    <button class="btn btn-g btn-sm" type="button" data-decline>Decline</button>
+    <button class="btn btn-p btn-sm" type="button" data-accept>Accept</button>
+  </div>
+</div>
+
 <div class="lb" id="lb" aria-hidden="true">
   <div class="lb-stage">
     <button class="lb-close" id="lbClose"><i data-lucide="x"></i> Close</button>

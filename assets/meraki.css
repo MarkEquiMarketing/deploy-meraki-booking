@@ -347,6 +347,10 @@ em{font-style:italic;color:var(--accent)}
 .evpics>div{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--charcoal)}
 .evpics>div:first-child{grid-row:1/3}
 .evpics img{width:100%;height:100%;object-fit:cover;display:block}
+.evpics .ev-vid{position:relative;cursor:pointer}
+.evpics .ev-vid .reel-play{width:3.4rem;height:3.4rem;border-width:1px}
+.evpics .ev-vid:hover img{transform:scale(1.03)}
+.evpics .ev-vid img{transition:transform var(--t-slow)}
 .evnav{display:flex;gap:1rem;align-items:center;justify-content:center;margin-top:1.6rem}
 .evnav .cnt{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-400)}
 .evnav button{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line-2);
@@ -566,6 +570,17 @@ em{font-style:italic;color:var(--accent)}
 .fomo-toast .close{position:absolute;top:.35rem;right:.4rem;background:none;border:0;color:var(--grey-400);cursor:pointer;font-size:1rem;line-height:1;padding:.25rem}
 @media(max-width:880px){.fomo-toast{bottom:calc(4.6rem + env(safe-area-inset-bottom))}} /* clear the buybar */
 
+/* ---------- cookie consent banner (gates the Meta Pixel) ---------- */
+.cookie{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:120;max-width:36rem;margin-inline:auto;
+  display:none;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  background:linear-gradient(160deg,var(--slate),var(--charcoal));border:1px solid var(--accent-line);
+  border-radius:var(--r);padding:1rem 1.2rem;box-shadow:var(--shadow-lg)}
+.cookie.show{display:flex}
+.cookie p{font-size:.86rem;color:var(--cream);line-height:1.5;margin:0;flex:1 1 15rem}
+.cookie p a{color:var(--accent)}
+.cookie-btns{display:flex;gap:.6rem;flex-shrink:0}
+@media(max-width:880px){.cookie{bottom:calc(4.8rem + env(safe-area-inset-bottom))}}
+
 /* ---------- evening timeline ---------- */
 .timeline{display:grid;gap:0;margin-top:2.2rem;position:relative}
 .tl-step{display:flex;gap:1.25rem;position:relative;padding-bottom:1.9rem}
@@ -614,6 +629,16 @@ em{font-style:italic;color:var(--accent)}
 .reel-item .m{font-family:var(--head);font-weight:600;color:var(--white);font-size:1rem}
 .reel-item .s{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-top:.2rem}
 @media(max-width:820px){.reel-split{grid-template-columns:1fr}}
+/* photo gallery beside the teaser (opens images in the lightbox) */
+.reel-gallery{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;align-content:start}
+.vidph{position:relative;overflow:hidden;border-radius:var(--r);border:1px solid var(--line-2);cursor:pointer;aspect-ratio:1/1;isolation:isolate}
+.vidph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;transition:transform var(--t-slow)}
+.vidph:hover img{transform:scale(1.06)}
+.vidph:hover{border-color:var(--accent-line)}
+.vidph .exp{position:absolute;top:.5rem;right:.5rem;width:1.9rem;height:1.9rem;display:grid;place-items:center;border-radius:50%;background:rgba(6,8,11,.55);border:1px solid var(--accent-line);opacity:0;transition:opacity var(--t)}
+.vidph:hover .exp{opacity:1}
+.vidph .exp svg{width:.9rem;height:.9rem;color:var(--accent)}
+@media(max-width:820px){.reel-gallery{margin-top:1rem}}
 
 /* ---------- partners / credibility strip ---------- */
 .partners{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--noir)}

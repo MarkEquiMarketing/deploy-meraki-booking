@@ -155,6 +155,33 @@
       }
     }
 
+    /* cookie consent — gates the Meta Pixel (window.merakiLoadPixel). Consent-first:
+       the pixel loads ONLY after Accept. Choice remembered in localStorage. The CM booking
+       shop is functional and always loads (not gated). */
+    var cookieEl = document.getElementById('cookie');
+    if (cookieEl) {
+      var consent = null;
+      try { consent = localStorage.getItem('meraki-consent'); } catch (e) {}
+      var closeCookie = function () { cookieEl.classList.remove('show'); };
+      var grant = function () {
+        try { localStorage.setItem('meraki-consent', 'granted'); } catch (e) {}
+        if (typeof window.merakiLoadPixel === 'function') window.merakiLoadPixel();
+        closeCookie();
+      };
+      var deny = function () {
+        try { localStorage.setItem('meraki-consent', 'denied'); } catch (e) {}
+        closeCookie();
+      };
+      if (consent === 'granted') {
+        if (typeof window.merakiLoadPixel === 'function') window.merakiLoadPixel();
+      } else if (consent !== 'denied') {
+        setTimeout(function () { cookieEl.classList.add('show'); }, 700);
+      }
+      var acc = cookieEl.querySelector('[data-accept]'), dec = cookieEl.querySelector('[data-decline]');
+      if (acc) acc.addEventListener('click', grant);
+      if (dec) dec.addEventListener('click', deny);
+    }
+
     /* mobile buy-bar — hide while the shop (or footer) is on screen */
     var bb = document.querySelector('.buybar');
     if (bb && 'IntersectionObserver' in window) {
