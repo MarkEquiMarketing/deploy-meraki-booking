@@ -243,6 +243,39 @@ fbq('track', 'PageView');
 
 <div class="divider"></div>
 
+<!-- FOOTAGE — see it to believe it (Fin: "nothing sells this show like the footage") -->
+<section class="section reel-sec" id="watch">
+  <div class="wrap">
+    <div class="intro rv" style="text-align:center;margin:0 auto 2.2rem">
+      <span class="label">The footage</span>
+      <h2 class="h2">You have to see it to <em>believe it</em></h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto">Fire in the dark, horses in full freedom, bodies in the air. Words do not do it justice, so watch.</p>
+    </div>
+    <!-- Featured: the Hunted trailer (proven Vimeo cut, same as the hero) -->
+    <div class="reel-feat rv rv1" data-vimeo="1209533346" role="button" tabindex="0" aria-label="Watch the trailer">
+      <img src="/preregistration/assets/finale.jpg" alt="Meraki Inspirations trailer">
+      <span class="reel-play"><i data-lucide="play"></i></span>
+      <div class="cap"><h3>Watch the trailer</h3><span class="dur">Two nights only</span></div>
+    </div>
+    <!-- Clips: labels are feeling-led (safe for any cut); relabel to match each clip once confirmed.
+         NOTE: 929272555 / 931442460 are privacy-restricted on Vimeo — add booking.meraki.show +
+         design-meraki.vercel.app to the video's allowed domains, or swap for public cuts. -->
+    <div class="reel-grid rv rv2">
+      <div class="reel-card" data-vimeo="929272555" role="button" tabindex="0" aria-label="Watch a clip">
+        <img src="/preregistration/assets/fire.jpg" alt=""><span class="reel-play"><i data-lucide="play"></i></span><span class="lb2">Fire in the night</span>
+      </div>
+      <div class="reel-card" data-vimeo="931442460" role="button" tabindex="0" aria-label="Watch a clip">
+        <img src="/preregistration/assets/aerial.jpg" alt=""><span class="reel-play"><i data-lucide="play"></i></span><span class="lb2">Bodies in the air</span>
+      </div>
+      <div class="reel-card" data-video="https://meraki.show/wp-content/uploads/2025/04/2021_09_Meraki_1.mp4" role="button" tabindex="0" aria-label="Watch a clip">
+        <img src="/preregistration/assets/liberty.jpg" alt=""><span class="reel-play"><i data-lucide="play"></i></span><span class="lb2">Horses in freedom</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- TRUST -->
 <section class="section trust">
   <div class="wrap">
@@ -296,6 +329,22 @@ fbq('track', 'PageView');
   </div>
 </section>
 
+<!-- PARTNERS — credibility strip (kept away from the booking iframe per branding rule) -->
+<section class="section partners">
+  <div class="wrap">
+    <p class="lead-in rv">One venue, everything under one roof</p>
+    <div class="pt-row rv rv1">
+      <!-- Confirmed on-site partners (De Blauwe Zaal ecosystem). Swap .nm for <img> logos when files arrive. -->
+      <div class="pt-plate"><span class="nm">De Blauwe Zaal</span><span class="rl">The venue</span></div>
+      <div class="pt-plate"><span class="nm">Zevensterre</span><span class="rl">Restaurant</span></div>
+      <div class="pt-plate"><span class="nm">Merula</span><span class="rl">Belgian wine</span></div>
+      <div class="pt-plate"><span class="nm">Club House</span><span class="rl">Bar &amp; terrace</span></div>
+      <!-- [PLACEHOLDER] Add confirmed sponsor/tourism logos here once received + approved:
+           Visit Bruges, Visit Flanders, Van der Valk. Use <img class> inside a .pt-plate. -->
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="foot">
   <div class="wrap">
@@ -317,6 +366,14 @@ fbq('track', 'PageView');
     <p class="copy">&copy; 2026 The Meraki Horse Show &middot; Meraki Inspirations</p>
   </div>
 </footer>
+
+<!-- LIGHTBOX (video/vimeo playback) -->
+<div class="lb" id="lb" aria-hidden="true">
+  <div class="lb-stage">
+    <button class="lb-close" id="lbClose"><i data-lucide="x"></i> Close</button>
+    <div id="lbContent"></div>
+  </div>
+</div>
 
 <!-- MOBILE STICKY BUY-BAR -->
 <div class="buybar" aria-hidden="false">
