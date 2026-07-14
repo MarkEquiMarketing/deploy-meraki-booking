@@ -256,9 +256,14 @@ fbq('track', 'PageView');
   <button class="close" aria-label="Dismiss">&times;</button>
 </div>
 <script>
-/* Honest FOMO config — every line must be TRUE and verifiable.
-   To add real social proof later, append REAL anonymised entries from CM sales,
-   e.g. "Someone from Ghent just booked 2 Arena tickets." Never invent names or purchases. */
+/* FOMO purchase notifications — "Margot just got 3 Arena tickets for Friday 2 October."
+   IMPORTANT (NL/BE law: no fabricated social proof): only add REAL buyers, copied from the
+   CM Ticketing dashboard. First name only, no surnames. Update this list as sales come in.
+   Format: {name:'Margot', qty:3, tier:'Arena', night:'Friday 2 October'}  (tier is optional)
+   While this list is empty, the generic true messages below are shown instead. */
+window.merakiPurchases = [
+  /* {name:'Margot', qty:3, tier:'Arena', night:'Friday 2 October'}, */
+];
 window.merakiToasts = [
   "Tickets are on sale now. Two nights only, and no third night.",
   "The Arena, Inner Circle and Chef's Table are all open for both nights.",

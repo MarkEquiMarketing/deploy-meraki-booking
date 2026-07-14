@@ -114,25 +114,45 @@
       setInterval(tick, 1000);
     }
 
-    /* honest FOMO toasts — reads window.merakiToasts (array of strings) set by the page.
-       LEGAL NOTE (NL/BE misleading-practices rules): only verifiable/true messages, or REAL
-       anonymised purchase data. Never invent names or purchases. */
-    var toastMsgs = window.merakiToasts;
+    /* FOMO toasts — purchase notifications ("Margot just got 3 Arena tickets for Friday 2 October").
+       Reads window.merakiPurchases: [{name:'Margot', qty:3, tier:'Arena', night:'Friday 2 October'}, ...]
+       LEGAL NOTE (NL/BE misleading-practices rules): entries MUST be real buyers, copied from the CM
+       dashboard (first name is enough). Never invent names or purchases. Falls back to the generic
+       true messages in window.merakiToasts while the purchases list is empty. */
     var toastEl = document.getElementById('fomoToast');
-    if (toastEl && Array.isArray(toastMsgs) && toastMsgs.length && !reduce) {
-      var ti = 0, shown = 0, MAX = 3;
-      var toastP = toastEl.querySelector('p');
-      var hideToast = function () { toastEl.classList.remove('show'); };
-      var showToast = function () {
-        if (shown >= MAX || ti >= toastMsgs.length) return;
-        toastP.textContent = toastMsgs[ti++]; shown++;
-        toastEl.classList.add('show');
-        setTimeout(hideToast, 7000);
-        if (shown < MAX && ti < toastMsgs.length) setTimeout(showToast, 26000);
-      };
-      var tc = toastEl.querySelector('.close');
-      if (tc) tc.addEventListener('click', function () { hideToast(); shown = MAX; });
-      setTimeout(showToast, 9000);
+    if (toastEl && !reduce) {
+      var msgs = [];
+      var purchases = Array.isArray(window.merakiPurchases) ? window.merakiPurchases.filter(function (p) { return p && p.name && p.qty && p.night; }) : [];
+      purchases.forEach(function (p) {
+        var tier = p.tier ? p.tier + ' ' : '';
+        var rest = p.qty > 1 ? (' just got ' + p.qty + ' ' + tier + 'tickets for ' + p.night)
+                             : (' just got a ' + tier + 'ticket for ' + p.night);
+        msgs.push({ html: '<strong>' + p.name + '</strong>' + rest + '.', ini: p.name.charAt(0).toUpperCase() });
+      });
+      if (!msgs.length && Array.isArray(window.merakiToasts)) {
+        window.merakiToasts.forEach(function (m) { msgs.push({ html: m, ini: null }); });
+      }
+      if (msgs.length) {
+        /* light shuffle so repeat visitors see variety */
+        for (var mi = msgs.length - 1; mi > 0; mi--) { var mj = Math.floor(Math.random() * (mi + 1)); var tmp = msgs[mi]; msgs[mi] = msgs[mj]; msgs[mj] = tmp; }
+        var ti = 0, shown = 0, MAX = Math.min(4, msgs.length);
+        var toastP = toastEl.querySelector('p');
+        var toastIc = toastEl.querySelector('.ic');
+        var icHTML = toastIc ? toastIc.innerHTML : '';
+        var hideToast = function () { toastEl.classList.remove('show'); };
+        var showToast = function () {
+          if (shown >= MAX || ti >= msgs.length) return;
+          var m = msgs[ti++]; shown++;
+          toastP.innerHTML = m.html;
+          if (toastIc) toastIc.innerHTML = m.ini ? '<span class="ini">' + m.ini + '</span>' : icHTML;
+          toastEl.classList.add('show');
+          setTimeout(hideToast, 7000);
+          if (shown < MAX && ti < msgs.length) setTimeout(showToast, 24000);
+        };
+        var tc = toastEl.querySelector('.close');
+        if (tc) tc.addEventListener('click', function () { hideToast(); shown = MAX; });
+        setTimeout(showToast, 8000);
+      }
     }
 
     /* mobile buy-bar — hide while the shop (or footer) is on screen */
