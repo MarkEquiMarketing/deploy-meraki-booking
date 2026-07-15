@@ -505,7 +505,7 @@ em{font-style:italic;color:var(--accent)}
   background:var(--charcoal);border:1.5px solid var(--line-2);border-radius:var(--r);padding:1rem 1.4rem;
   transition:border-color var(--t),background var(--t),box-shadow var(--t)}
 .nights button .day{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
-.nights button .date{font-family:var(--display);font-weight:700;font-size:1.6rem;color:var(--white);letter-spacing:.02em}
+.nights button .date{font-family:var(--display);font-weight:700;font-size:1.6rem;color:var(--white);letter-spacing:.02em;white-space:nowrap}
 .nights button:hover{border-color:var(--accent-line)}
 .nights button[aria-selected="true"]{border-color:var(--accent);background:var(--accent-soft);box-shadow:var(--glow)}
 .nights button[aria-selected="true"] .day{color:var(--accent)}
@@ -533,6 +533,8 @@ em{font-style:italic;color:var(--accent)}
   .bstep{gap:1rem}
   .bstep>.n{flex-basis:2.8rem;height:2.8rem;font-size:1.4rem}
   .bstep h3{font-size:1.3rem}
+  /* pull step content out of the number indent so cards + shop go full width */
+  .bstep .nights,.bstep .shop-frame{width:calc(100% + 3.8rem);margin-left:-3.8rem}
 }
 
 /* tier price (Devil Breeze metal) */
@@ -639,6 +641,11 @@ em{font-style:italic;color:var(--accent)}
 .vidph:hover .exp{opacity:1}
 .vidph .exp svg{width:.9rem;height:.9rem;color:var(--accent)}
 @media(max-width:820px){.reel-gallery{margin-top:1rem}}
+
+/* ---------- location map (Google Maps embed, dark-themed via filter) ---------- */
+.map-frame{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--accent-line);box-shadow:var(--shadow),var(--glow)}
+.map-frame iframe{width:100%;height:440px;border:0;display:block;filter:invert(.92) hue-rotate(180deg) saturate(.9)}
+@media(max-width:760px){.map-frame iframe{height:340px}}
 
 /* ---------- partners / credibility strip ---------- */
 .partners{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--noir)}
