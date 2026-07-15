@@ -284,9 +284,10 @@ em{font-style:italic;color:var(--accent)}
 @media(max-width:760px){.tiers{grid-template-columns:1fr}}
 
 /* ---------- image marquee (drifting photo strip, shows on all screens incl. mobile) ---------- */
-.img-marquee{overflow:hidden;padding:1rem 0;background:var(--noir);border-block:1px solid var(--line);
+.img-marquee{display:none;overflow:hidden;padding:1rem 0;background:var(--noir);border-block:1px solid var(--line);
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+@media(max-width:880px){.img-marquee{display:block}}   /* mobile/tablet only — desktop uses the floating photos */
 .img-marquee .track{display:flex;gap:.9rem;width:max-content;animation:marquee 55s linear infinite}
 .img-marquee:hover .track{animation-play-state:paused}
 .img-marquee .m-ph{flex:0 0 auto;height:12rem;border-radius:var(--r);overflow:hidden;border:1px solid var(--line-2)}
