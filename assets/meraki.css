@@ -285,15 +285,15 @@ em{font-style:italic;color:var(--accent)}
 
 /* ---------- floating event photos around the comparison table (desktop decoration) ---------- */
 .cmp-sec{position:relative;overflow:hidden}
-.cmp-float{position:absolute;z-index:1;border-radius:50%;overflow:hidden;border:2px solid var(--accent-line);
-  box-shadow:var(--glow),var(--shadow);pointer-events:none;display:none;animation:cmpfloat 7s ease-in-out infinite}
-.cmp-float img{width:100%;height:100%;object-fit:cover;opacity:.92}
-.cmp-float.f-a{width:9.5rem;height:9.5rem;left:2%;top:14%}
-.cmp-float.f-b{width:6.5rem;height:6.5rem;left:5.5%;bottom:12%;animation-delay:-2.3s}
-.cmp-float.f-c{width:7.5rem;height:7.5rem;right:3%;top:9%;animation-delay:-1.2s}
-.cmp-float.f-d{width:10rem;height:10rem;right:1.5%;bottom:13%;animation-delay:-3.5s}
+.cmp-float{position:absolute;z-index:1;border-radius:var(--r-lg);overflow:hidden;border:2px solid var(--accent-line);
+  box-shadow:var(--glow),var(--shadow-lg);pointer-events:none;display:none;animation:cmpfloat 7s ease-in-out infinite}
+.cmp-float img{width:100%;height:100%;object-fit:cover;opacity:.94}
+.cmp-float.f-a{width:14rem;height:10rem;left:1.5%;top:9%}
+.cmp-float.f-b{width:11rem;height:14rem;left:3.5%;bottom:6%;animation-delay:-2.3s}
+.cmp-float.f-c{width:12rem;height:15rem;right:2.5%;top:6%;animation-delay:-1.2s}
+.cmp-float.f-d{width:14.5rem;height:10.5rem;right:1%;bottom:8%;animation-delay:-3.5s}
 @keyframes cmpfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-@media(min-width:1250px){.cmp-float{display:block}}
+@media(min-width:1500px){.cmp-float{display:block}}
 @media(prefers-reduced-motion:reduce){.cmp-float{animation:none}}
 
 /* ---------- tier comparison table ("what you get, side by side") ---------- */
