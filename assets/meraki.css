@@ -343,7 +343,7 @@ em{font-style:italic;color:var(--accent)}
 .evpanel h3{font-family:var(--head);font-weight:600;font-size:clamp(1.7rem,2.8vw,2.4rem);color:var(--white);margin:.5rem 0 1rem}
 .evpanel .lead2{font-size:1.14rem;color:var(--cream);line-height:1.65}
 .evpanel .more{font-size:1rem;color:var(--mist);line-height:1.65;margin-top:.9rem}
-.evpics{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:.8rem;height:100%;min-height:22rem}
+.evpics{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:.8rem;height:100%;min-height:31rem}
 .evpics>div{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--charcoal)}
 .evpics>div:first-child{grid-row:1/3}
 .evpics img{width:100%;height:100%;object-fit:cover;display:block}
