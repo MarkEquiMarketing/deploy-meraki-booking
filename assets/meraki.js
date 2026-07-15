@@ -125,8 +125,9 @@
       var purchases = Array.isArray(window.merakiPurchases) ? window.merakiPurchases.filter(function (p) { return p && p.name && p.qty && p.night; }) : [];
       purchases.forEach(function (p) {
         var tier = p.tier ? p.tier + ' ' : '';
+        var art = /^[aeiou]/i.test(p.tier || 'ticket') ? 'an' : 'a';
         var rest = p.qty > 1 ? (' just got ' + p.qty + ' ' + tier + 'tickets for ' + p.night)
-                             : (' just got a ' + tier + 'ticket for ' + p.night);
+                             : (' just got ' + art + ' ' + tier + 'ticket for ' + p.night);
         msgs.push({ html: '<strong>' + p.name + '</strong>' + rest + '.', ini: p.name.charAt(0).toUpperCase() });
       });
       if (!msgs.length && Array.isArray(window.merakiToasts)) {
