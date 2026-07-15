@@ -547,17 +547,19 @@ em{font-style:italic;color:var(--accent)}
 /* buy flow — numbered steps around the shop (1 pick night, 2 seats+pay, 3 done) */
 .bstep{display:flex;gap:1.4rem;margin-bottom:2.2rem}
 .bstep:last-child{margin-bottom:0}
-.bstep>.n{flex:0 0 3.4rem;height:3.4rem;display:grid;place-items:center;border-radius:50%;background:var(--accent-soft);
+.bstep>.n{position:relative;z-index:1;flex:0 0 3.4rem;height:3.4rem;display:grid;place-items:center;border-radius:50%;background:var(--accent-soft);
   border:1px solid var(--accent-line);font-family:var(--display);font-weight:700;font-size:1.7rem;color:var(--accent)}
 .bstep>.body{flex:1;min-width:0}
-.bstep h3{font-family:var(--head);font-weight:600;font-size:1.5rem;color:var(--white)}
+.bstep h3{font-family:var(--head);font-weight:600;font-size:1.5rem;color:var(--white);margin-bottom:1rem}
 .nights.grid2{display:grid;grid-template-columns:1fr 1fr;justify-content:stretch}
 .nights.grid2 button{max-width:none}
 @media(max-width:700px){
   .nights.grid2{grid-template-columns:1fr}
   .bstep{gap:1rem}
   .bstep>.n{flex-basis:2.8rem;height:2.8rem;font-size:1.4rem}
-  .bstep h3{font-size:1.3rem}
+  /* number circle is taller than the title line; give the full-width content below
+     enough room to clear it (no more "1"/"2" hiding behind the cards/shop) */
+  .bstep h3{font-size:1.3rem;margin-bottom:2.4rem}
   /* pull step content out of the number indent so cards + shop go full width */
   .bstep .nights,.bstep .shop-frame{width:calc(100% + 3.8rem);margin-left:-3.8rem}
   /* slightly smaller date so it never crowds the card borders on narrow screens */
