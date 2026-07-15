@@ -4,11 +4,12 @@ RewriteEngine On
 # Bare root → main site (only the empty path, sub-paths untouched)
 RewriteRule ^$ https://meraki.show/ [R=301,L]
 
-# Legacy path kept working
-RewriteRule ^pre-register/?$ /preregistration/ [R=301,L]
-
-# Campaign URL for the 2026 event -> pre-registration (temporary; may become its own page later)
-RewriteRule ^event-2026/?$ /preregistration/ [R=302,L,NC]
+# The giveaway / pre-registration now forwards to ticket sales.
+# NOTE: only the PAGE root redirects — /preregistration/assets/* keeps serving
+# (the tickets page still loads its show photos from there). 302 = reversible.
+RewriteRule ^preregistration/?$ /tickets/ [R=302,L]
+RewriteRule ^pre-register/?$    /tickets/ [R=302,L]
+RewriteRule ^event-2026/?$      /tickets/ [R=302,L,NC]
 
 # Far-future cache for static assets
 <IfModule mod_expires.c>
