@@ -535,6 +535,8 @@ em{font-style:italic;color:var(--accent)}
   .bstep h3{font-size:1.3rem}
   /* pull step content out of the number indent so cards + shop go full width */
   .bstep .nights,.bstep .shop-frame{width:calc(100% + 3.8rem);margin-left:-3.8rem}
+  /* slightly smaller date so it never crowds the card borders on narrow screens */
+  .nights button .date{font-size:1.5rem;letter-spacing:0}
 }
 
 /* tier price (Devil Breeze metal) */
