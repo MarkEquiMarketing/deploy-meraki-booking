@@ -283,6 +283,19 @@ em{font-style:italic;color:var(--accent)}
 .tier p{font-size:.95rem;color:var(--mist);line-height:1.55}
 @media(max-width:760px){.tiers{grid-template-columns:1fr}}
 
+/* ---------- floating event photos around the comparison table (desktop decoration) ---------- */
+.cmp-sec{position:relative;overflow:hidden}
+.cmp-float{position:absolute;z-index:1;border-radius:50%;overflow:hidden;border:2px solid var(--accent-line);
+  box-shadow:var(--glow),var(--shadow);pointer-events:none;display:none;animation:cmpfloat 7s ease-in-out infinite}
+.cmp-float img{width:100%;height:100%;object-fit:cover;opacity:.92}
+.cmp-float.f-a{width:9.5rem;height:9.5rem;left:2%;top:14%}
+.cmp-float.f-b{width:6.5rem;height:6.5rem;left:5.5%;bottom:12%;animation-delay:-2.3s}
+.cmp-float.f-c{width:7.5rem;height:7.5rem;right:3%;top:9%;animation-delay:-1.2s}
+.cmp-float.f-d{width:10rem;height:10rem;right:1.5%;bottom:13%;animation-delay:-3.5s}
+@keyframes cmpfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@media(min-width:1250px){.cmp-float{display:block}}
+@media(prefers-reduced-motion:reduce){.cmp-float{animation:none}}
+
 /* ---------- tier comparison table ("what you get, side by side") ---------- */
 .cmp{display:grid;grid-template-columns:.9fr repeat(3,1fr);grid-template-rows:auto auto auto auto;
   background:linear-gradient(165deg,rgba(27,33,43,.55),rgba(11,14,19,.75));border:1px solid var(--line-2);
