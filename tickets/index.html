@@ -284,25 +284,27 @@ window.merakiLoadPixel = function () {
 <!-- FOOTAGE — see it to believe it (Fin: "nothing sells this show like the footage") -->
 <section class="section reel-sec" id="watch">
   <div class="wrap">
-    <!-- Content only (no header, per request). Featured trailer + playlist of clips, all open the lightbox.
-         NOTE: 929272555 / 931442460 are privacy-restricted on Vimeo — add booking.meraki.show +
-         design-meraki.vercel.app to the video's allowed domains, or swap for public cuts.
-         Clip labels are feeling-led; relabel to match each clip once confirmed. -->
-    <div class="reel-split rv">
-      <!-- Teaser video stays (the Hunted hero cut). The rest of the section is photos. -->
-      <div class="reel-feat" data-vimeo="1209533346" role="button" tabindex="0" aria-label="Watch the trailer">
-        <img src="/preregistration/assets/finale.jpg" alt="Meraki Inspirations trailer">
+    <!-- Rich photo mosaic (show + venue + Zevensterre dining) + the teaser video, all open in the
+         lightbox. Photos via data-img, the trailer via data-vimeo. -->
+    <div class="mosaic rv">
+      <div class="m-tile m-vid big" data-vimeo="1209533346" role="button" tabindex="0" aria-label="Watch the trailer">
+        <img src="/preregistration/assets/hero.jpg" alt="Meraki Inspirations trailer">
         <span class="reel-play"><i data-lucide="play"></i></span>
-        <div class="cap"><h3>Watch the trailer</h3><span class="dur">Two nights only</span></div>
+        <span class="vlab">Watch the trailer</span>
       </div>
-      <!-- Photo gallery: real show photos, open full-size in the lightbox via data-img -->
-      <!-- Alternating show + Zevensterre food photos for variety (photos only, no video) -->
-      <div class="reel-gallery">
-        <div class="vidph" data-img="/preregistration/assets/aerial.jpg" data-alt="Above the ring"><img loading="lazy" src="/preregistration/assets/aerial.jpg" alt="Above the ring"><span class="exp"><i data-lucide="expand"></i></span></div>
-        <div class="vidph" data-img="/assets/venue/food-1.webp" data-alt="Dining at Zevensterre"><img loading="lazy" src="/assets/venue/food-1.webp" alt="Dining at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
-        <div class="vidph" data-img="/preregistration/assets/fire.jpg" data-alt="Fire in the night"><img loading="lazy" src="/preregistration/assets/fire.jpg" alt="Fire in the night"><span class="exp"><i data-lucide="expand"></i></span></div>
-        <div class="vidph" data-img="/assets/venue/food-2.jpg" data-alt="Gourmet at Zevensterre"><img loading="lazy" src="/assets/venue/food-2.jpg" alt="Gourmet at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
-      </div>
+      <div class="m-tile wide" data-img="/assets/venue/event-1.jpg" data-alt="Fire in the arena"><img loading="lazy" src="/assets/venue/event-1.jpg" alt="Fire in the arena"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/preregistration/assets/aerial.jpg" data-alt="Above the ring"><img loading="lazy" src="/preregistration/assets/aerial.jpg" alt="Above the ring"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile tall" data-img="/assets/venue/blauwe-zaal-2.jpg" data-alt="The stables at De Blauwe Zaal"><img loading="lazy" src="/assets/venue/blauwe-zaal-2.jpg" alt="The stables at De Blauwe Zaal"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/preregistration/assets/fire.jpg" data-alt="Fire in the night"><img loading="lazy" src="/preregistration/assets/fire.jpg" alt="Fire in the night"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile wide" data-img="/preregistration/assets/finale.jpg" data-alt="The finale"><img loading="lazy" src="/preregistration/assets/finale.jpg" alt="The finale"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/food-1.webp" data-alt="Dining at Zevensterre"><img loading="lazy" src="/assets/venue/food-1.webp" alt="Dining at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/preregistration/assets/liberty.jpg" data-alt="Horses in freedom"><img loading="lazy" src="/preregistration/assets/liberty.jpg" alt="Horses in freedom"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/zevensterre-1.webp" data-alt="Restaurant Zevensterre"><img loading="lazy" src="/assets/venue/zevensterre-1.webp" alt="Restaurant Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/preregistration/assets/trick.jpg" data-alt="Trust, no words"><img loading="lazy" src="/preregistration/assets/trick.jpg" alt="Trust, no words"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/food-2.jpg" data-alt="Gourmet at Zevensterre"><img loading="lazy" src="/assets/venue/food-2.jpg" alt="Gourmet at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/zevensterre-2.webp" data-alt="A table set at Zevensterre"><img loading="lazy" src="/assets/venue/zevensterre-2.webp" alt="A table set at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/dining.webp" data-alt="The dining room"><img loading="lazy" src="/assets/venue/dining.webp" alt="The dining room"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/blauwe-zaal-1.jpg" data-alt="De Blauwe Zaal from above"><img loading="lazy" src="/assets/venue/blauwe-zaal-1.jpg" alt="De Blauwe Zaal from above"><span class="exp"><i data-lucide="expand"></i></span></div>
     </div>
   </div>
 </section>

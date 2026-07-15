@@ -644,6 +644,26 @@ em{font-style:italic;color:var(--accent)}
 .vidph .exp svg{width:.9rem;height:.9rem;color:var(--accent)}
 @media(max-width:820px){.reel-gallery{margin-top:1rem}}
 
+/* footage mosaic — rich photo wall + teaser video, all open in the lightbox */
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:11rem;gap:.7rem;grid-auto-flow:dense}
+.mosaic .m-tile{position:relative;overflow:hidden;border-radius:var(--r);border:1px solid var(--line-2);cursor:pointer;isolation:isolate}
+.mosaic .m-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;transition:transform var(--t-slow)}
+.mosaic .m-tile:hover img{transform:scale(1.06)}
+.mosaic .m-tile:hover{border-color:var(--accent-line)}
+.mosaic .wide{grid-column:span 2}
+.mosaic .tall{grid-row:span 2}
+.mosaic .big{grid-column:span 2;grid-row:span 2}
+.mosaic .exp{position:absolute;top:.5rem;right:.5rem;z-index:1;width:1.9rem;height:1.9rem;display:grid;place-items:center;border-radius:50%;background:rgba(6,8,11,.55);border:1px solid var(--accent-line);opacity:0;transition:opacity var(--t)}
+.mosaic .m-tile:hover .exp{opacity:1}
+.mosaic .exp svg{width:.9rem;height:.9rem;color:var(--accent)}
+.mosaic .m-vid{border-color:var(--accent-line);box-shadow:var(--glow)}
+.mosaic .m-vid .reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.mosaic .m-vid:hover .reel-play{transform:translate(-50%,-50%) scale(1.08)}
+.mosaic .m-vid .vlab{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:1.1rem 1.3rem;font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,2.4vw,1.9rem);color:var(--white)}
+.mosaic .m-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(6,8,11,.72))}
+@media(max-width:820px){.mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:9rem}}
+@media(max-width:460px){.mosaic{grid-auto-rows:8rem}}
+
 /* ---------- location map (Google Maps embed, dark-themed via filter) ---------- */
 .map-frame{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--accent-line);box-shadow:var(--shadow),var(--glow)}
 .map-frame iframe{width:100%;height:440px;border:0;display:block;filter:invert(.92) hue-rotate(180deg) saturate(.9)}
