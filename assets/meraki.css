@@ -292,6 +292,10 @@ em{font-style:italic;color:var(--accent)}
   mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 @media(max-width:880px){.img-marquee{display:block}}   /* mobile/tablet only — desktop uses the floating photos */
 .img-marquee .track{display:flex;gap:.9rem;width:max-content;animation:marquee 55s linear infinite}
+.img-marquee .track.rev{animation-direction:reverse}          /* second row drifts the other way */
+.img-marquee .track + .track{margin-top:.9rem}
+/* mobile: this two-row marquee replaces the footage grid; keep only the trailer video */
+@media(max-width:880px){.mosaic .m-tile:not(.m-vid){display:none}}
 .img-marquee:hover .track{animation-play-state:paused}
 .img-marquee .m-ph{flex:0 0 auto;height:12rem;border-radius:var(--r);overflow:hidden;border:1px solid var(--line-2)}
 .img-marquee .m-ph img{height:100%;width:auto;display:block;object-fit:cover}
