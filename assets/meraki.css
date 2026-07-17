@@ -579,7 +579,7 @@ em{font-style:italic;color:var(--accent)}
      enough room to clear it (no more "1"/"2" hiding behind the cards/shop) */
   .bstep h3{font-size:1.3rem;margin-bottom:2.4rem}
   /* pull step content out of the number indent so cards + shop go full width */
-  .bstep .nights,.bstep .shop-frame{width:calc(100% + 3.8rem);margin-left:-3.8rem}
+  .bstep .nights,.bstep .shop-frame,.bstep .map-frame{width:calc(100% + 3.8rem);margin-left:-3.8rem}
   /* slightly smaller date so it never crowds the card borders on narrow screens */
   .nights button .date{font-size:1.5rem;letter-spacing:0}
 }
@@ -715,18 +715,6 @@ em{font-style:italic;color:var(--accent)}
 @media(max-width:760px){.map-frame iframe{height:340px}}
 
 /* ---------- partners / credibility strip ---------- */
-/* info band — key facts + book button, directly under the hero */
-.infoband{background:var(--noir);border-top:1px solid var(--accent-line);border-bottom:1px solid var(--accent-line);padding:1rem 0}
-.ib-row{display:flex;align-items:center;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap}
-.ib-facts{display:flex;flex-wrap:wrap;gap:.5rem 1.8rem;color:var(--cream);font-size:1rem}
-.ib-facts span{display:inline-flex;align-items:center;gap:.5rem}
-.ib-facts svg{width:1.05rem;height:1.05rem;color:var(--accent);flex-shrink:0}
-.ib-cta{flex-shrink:0}
-@media(max-width:760px){
-  .ib-row{justify-content:center;text-align:center}
-  .ib-facts{justify-content:center;font-size:.92rem}
-  .ib-cta{width:100%;justify-content:center}
-}
 .partners{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--noir)}
 .partners .lead-in{text-align:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--grey-400);margin-bottom:1.8rem}
 .pt-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:clamp(1.1rem,3vw,2.4rem)}
