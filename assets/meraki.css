@@ -243,6 +243,9 @@ em{font-style:italic;color:var(--accent)}
   padding:0 1.6rem;display:inline-flex;align-items:center;gap:1.6rem;white-space:nowrap}
 .marquee span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
 .marquee .dim{color:var(--grey-600)}
+/* partner logos in the marquee — dark logos on a white badge so they read on the dark strip */
+.marquee .lg b{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:999px;padding:.32rem 1.05rem;height:2.5rem}
+.marquee .lg b img{height:100%;width:auto;max-width:9rem;object-fit:contain;display:block}
 
 /* ---------- sections ---------- */
 .section{padding:var(--sec) 0;position:relative}
