@@ -364,8 +364,8 @@ em{font-style:italic;color:var(--accent)}
 .evpanel{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(1.6rem,3.4vw,2.8rem);align-items:center;
   background:linear-gradient(160deg,rgba(27,33,43,.6),rgba(11,14,19,.85));border:1px solid var(--line-2);border-radius:var(--r-xl);
   padding:clamp(1.6rem,3.4vw,2.8rem)}
-.evk{font-family:var(--mono);font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
-.evpanel h3{font-family:var(--head);font-weight:600;font-size:clamp(1.7rem,2.8vw,2.4rem);color:var(--white);margin:.5rem 0 1rem}
+.evk{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.evpanel h3{font-family:var(--head);font-weight:600;font-size:clamp(2rem,3.4vw,2.9rem);color:var(--white);margin:.5rem 0 1rem}
 .evpanel .lead2{font-size:1.14rem;color:var(--cream);line-height:1.65}
 .evpanel .more{font-size:1rem;color:var(--mist);line-height:1.65;margin-top:.9rem}
 .evpics{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:.8rem;height:100%;min-height:31rem}
@@ -376,6 +376,21 @@ em{font-style:italic;color:var(--accent)}
 .evpics .ev-vid .reel-play{width:3.4rem;height:3.4rem;border-width:1px}
 .evpics .ev-vid:hover img{transform:scale(1.03)}
 .evpics .ev-vid img{transition:transform var(--t-slow)}
+/* placeholder tile — marks where a real photo still needs to go (topic in the label) */
+.evpics .ph-slot{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;text-align:center;padding:1rem;
+  background:repeating-linear-gradient(45deg,var(--charcoal),var(--charcoal) 12px,rgba(18,181,198,.06) 12px,rgba(18,181,198,.06) 24px);
+  border:1.5px dashed var(--accent)}
+.evpics .ph-slot svg{width:2.2rem;height:2.2rem;color:var(--accent);opacity:.85}
+.evpics .ph-slot span{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.02em;color:var(--mist);max-width:12rem;line-height:1.35}
+/* tier timeline (expandable, keeps the comparison table compact) */
+.tl{margin-top:.9rem;text-align:left;width:100%}
+.tl summary{cursor:pointer;list-style:none;font-family:var(--head);font-weight:600;font-size:.82rem;color:var(--accent);display:inline-flex;align-items:center;gap:.4rem;padding:.2rem 0}
+.tl summary::-webkit-details-marker{display:none}
+.tl summary::before{content:"\25B8";transition:transform var(--t)}
+.tl[open] summary::before{transform:rotate(90deg)}
+.tl ul{list-style:none;margin:.6rem 0 0;padding:0;display:flex;flex-direction:column;gap:.4rem}
+.tl li{font-size:.82rem;color:var(--cream);line-height:1.35}
+.tl li b{color:var(--white);font-family:var(--head);margin-right:.4rem;font-variant-numeric:tabular-nums}
 .evnav{display:flex;gap:1rem;align-items:center;justify-content:center;margin-top:1.6rem}
 .evnav .cnt{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-400)}
 .evnav button{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line-2);
