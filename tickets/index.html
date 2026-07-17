@@ -70,6 +70,17 @@ window.merakiLoadPixel = function () {
   </div>
 </section>
 
+<!-- INFO BAND — key facts + a book button, right under the hero -->
+<section class="infoband">
+  <div class="wrap ib-row">
+    <div class="ib-facts">
+      <span><i data-lucide="calendar"></i> Friday 2 &amp; Saturday 3 October 2026</span>
+      <span><i data-lucide="map-pin"></i> De Blauwe Zaal, Blauwezaalhoek 4, 8310 Brugge</span>
+    </div>
+    <a class="btn btn-p ib-cta mag" href="#tickets"><i data-lucide="ticket"></i> Get your tickets</a>
+  </div>
+</section>
+
 <!-- KINETIC MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="track">
@@ -136,6 +147,36 @@ window.merakiLoadPixel = function () {
       </div>
     </div>
     <p class="rv rv1" style="margin-top:1.6rem;font-size:.95rem;color:var(--grey-400);text-align:center">Parking (&euro;5) is sold separately in the shop for Arena and Inner Circle guests. Chef's Table includes parking.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOOTAGE — see it to believe it (Fin: "nothing sells this show like the footage") — moved up: proof right after the prices -->
+<section class="section reel-sec" id="watch">
+  <div class="wrap">
+    <!-- Rich photo mosaic (show + venue + Zevensterre dining) + the teaser video, all open in the
+         lightbox. Photos via data-img, the trailer via data-vimeo. -->
+    <div class="mosaic rv">
+      <div class="m-tile m-vid big" data-vimeo="1209533346" role="button" tabindex="0" aria-label="Watch the trailer">
+        <img src="/preregistration/assets/hero.jpg" alt="Meraki Inspirations trailer">
+        <span class="reel-play"><i data-lucide="play"></i></span>
+        <span class="vlab">Watch the trailer</span>
+      </div>
+      <div class="m-tile wide" data-img="/assets/venue/event-1.jpg" data-alt="Fire in the arena"><img loading="lazy" src="/assets/venue/event-1.jpg" alt="Fire in the arena"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/preregistration/assets/aerial.jpg" data-alt="Above the ring"><img loading="lazy" src="/preregistration/assets/aerial.jpg" alt="Above the ring"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile tall" data-img="/assets/venue/blauwe-zaal-2.jpg" data-alt="The stables at De Blauwe Zaal"><img loading="lazy" src="/assets/venue/blauwe-zaal-2.jpg" alt="The stables at De Blauwe Zaal"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/preregistration/assets/fire.jpg" data-alt="Fire in the night"><img loading="lazy" src="/preregistration/assets/fire.jpg" alt="Fire in the night"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile wide" data-img="/assets/venue/meraki-009.jpg" data-alt="The cast in the blue light"><img loading="lazy" src="/assets/venue/meraki-009.jpg" alt="The cast in the blue light"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/food-1.webp" data-alt="Dining at Zevensterre"><img loading="lazy" src="/assets/venue/food-1.webp" alt="Dining at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/preregistration/assets/liberty.jpg" data-alt="Horses in freedom"><img loading="lazy" src="/preregistration/assets/liberty.jpg" alt="Horses in freedom"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/zevensterre-1.webp" data-alt="Restaurant Zevensterre"><img loading="lazy" src="/assets/venue/zevensterre-1.webp" alt="Restaurant Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/preregistration/assets/trick.jpg" data-alt="Trust, no words"><img loading="lazy" src="/preregistration/assets/trick.jpg" alt="Trust, no words"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/food-2.jpg" data-alt="Gourmet at Zevensterre"><img loading="lazy" src="/assets/venue/food-2.jpg" alt="Gourmet at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/zevensterre-2.webp" data-alt="A table set at Zevensterre"><img loading="lazy" src="/assets/venue/zevensterre-2.webp" alt="A table set at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/dining.webp" data-alt="The dining room"><img loading="lazy" src="/assets/venue/dining.webp" alt="The dining room"><span class="exp"><i data-lucide="expand"></i></span></div>
+      <div class="m-tile" data-img="/assets/venue/blauwe-zaal-1.jpg" data-alt="De Blauwe Zaal from above"><img loading="lazy" src="/assets/venue/blauwe-zaal-1.jpg" alt="De Blauwe Zaal from above"><span class="exp"><i data-lucide="expand"></i></span></div>
+    </div>
   </div>
 </section>
 
@@ -332,62 +373,6 @@ window.merakiLoadPixel = function () {
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- FOOTAGE — see it to believe it (Fin: "nothing sells this show like the footage") -->
-<section class="section reel-sec" id="watch">
-  <div class="wrap">
-    <!-- Rich photo mosaic (show + venue + Zevensterre dining) + the teaser video, all open in the
-         lightbox. Photos via data-img, the trailer via data-vimeo. -->
-    <div class="mosaic rv">
-      <div class="m-tile m-vid big" data-vimeo="1209533346" role="button" tabindex="0" aria-label="Watch the trailer">
-        <img src="/preregistration/assets/hero.jpg" alt="Meraki Inspirations trailer">
-        <span class="reel-play"><i data-lucide="play"></i></span>
-        <span class="vlab">Watch the trailer</span>
-      </div>
-      <div class="m-tile wide" data-img="/assets/venue/event-1.jpg" data-alt="Fire in the arena"><img loading="lazy" src="/assets/venue/event-1.jpg" alt="Fire in the arena"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile" data-img="/preregistration/assets/aerial.jpg" data-alt="Above the ring"><img loading="lazy" src="/preregistration/assets/aerial.jpg" alt="Above the ring"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile tall" data-img="/assets/venue/blauwe-zaal-2.jpg" data-alt="The stables at De Blauwe Zaal"><img loading="lazy" src="/assets/venue/blauwe-zaal-2.jpg" alt="The stables at De Blauwe Zaal"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile" data-img="/preregistration/assets/fire.jpg" data-alt="Fire in the night"><img loading="lazy" src="/preregistration/assets/fire.jpg" alt="Fire in the night"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile wide" data-img="/assets/venue/meraki-009.jpg" data-alt="The cast in the blue light"><img loading="lazy" src="/assets/venue/meraki-009.jpg" alt="The cast in the blue light"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile" data-img="/assets/venue/food-1.webp" data-alt="Dining at Zevensterre"><img loading="lazy" src="/assets/venue/food-1.webp" alt="Dining at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile" data-img="/preregistration/assets/liberty.jpg" data-alt="Horses in freedom"><img loading="lazy" src="/preregistration/assets/liberty.jpg" alt="Horses in freedom"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile" data-img="/assets/venue/zevensterre-1.webp" data-alt="Restaurant Zevensterre"><img loading="lazy" src="/assets/venue/zevensterre-1.webp" alt="Restaurant Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile" data-img="/preregistration/assets/trick.jpg" data-alt="Trust, no words"><img loading="lazy" src="/preregistration/assets/trick.jpg" alt="Trust, no words"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile" data-img="/assets/venue/food-2.jpg" data-alt="Gourmet at Zevensterre"><img loading="lazy" src="/assets/venue/food-2.jpg" alt="Gourmet at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile" data-img="/assets/venue/zevensterre-2.webp" data-alt="A table set at Zevensterre"><img loading="lazy" src="/assets/venue/zevensterre-2.webp" alt="A table set at Zevensterre"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile" data-img="/assets/venue/dining.webp" data-alt="The dining room"><img loading="lazy" src="/assets/venue/dining.webp" alt="The dining room"><span class="exp"><i data-lucide="expand"></i></span></div>
-      <div class="m-tile" data-img="/assets/venue/blauwe-zaal-1.jpg" data-alt="De Blauwe Zaal from above"><img loading="lazy" src="/assets/venue/blauwe-zaal-1.jpg" alt="De Blauwe Zaal from above"><span class="exp"><i data-lucide="expand"></i></span></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- TRUST -->
-<section class="section trust">
-  <div class="wrap">
-    <div class="trust-head rv">
-      <div class="rating">
-        <div class="num"><b>4.8</b>/5</div>
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="cap">Rated by past guests</div>
-      </div>
-      <p class="venue">Staged at <strong>De Blauwe Zaal</strong> near Bruges, home to restaurant <strong>Zevensterre</strong> and its own Belgian wine, <strong>Merula</strong>. An intimate room, two nights only.</p>
-    </div>
-    <div class="rev-drift rv rv1" aria-label="Guest reviews">
-      <div class="track">
-        <figure class="rstub"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Horses seem to fly, and every seat feels like the best in the house.</p><figcaption class="who">A past guest</figcaption></figure>
-        <figure class="rstub"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Magical. Full of goosebumps from the first second.</p><figcaption class="who">A past guest</figcaption></figure>
-        <figure class="rstub"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>An evening I will never forget.</p><figcaption class="who">A past guest</figcaption></figure>
-        <figure class="rstub" aria-hidden="true"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Horses seem to fly, and every seat feels like the best in the house.</p><figcaption class="who">A past guest</figcaption></figure>
-        <figure class="rstub" aria-hidden="true"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Magical. Full of goosebumps from the first second.</p><figcaption class="who">A past guest</figcaption></figure>
-        <figure class="rstub" aria-hidden="true"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>An evening I will never forget.</p><figcaption class="who">A past guest</figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FINAL CTA -->
 <section class="section cta-ticket">
   <div class="wrap">
@@ -395,7 +380,7 @@ window.merakiLoadPixel = function () {
       <div class="main">
         <span class="label">Two nights only</span>
         <h2 class="h2">When they are gone, <em>they are gone.</em></h2>
-        <p>Two performances at an intimate venue, and no third night. Pick your night and secure your seats now.</p>
+        <p>Two performances at an intimate venue. Pick your night and secure your seats now.</p>
         <a class="btn btn-p btn-lg mag" href="#tickets"><i data-lucide="ticket"></i> Get your tickets</a>
       </div>
       <div class="stub">
@@ -427,6 +412,32 @@ window.merakiLoadPixel = function () {
     </div>
     <div class="map-frame rv rv1">
       <iframe src="https://maps.google.com/maps?q=Blauwezaalhoek%204%2C%208310%20Brugge&t=&z=15&ie=UTF8&iwloc=&output=embed" title="De Blauwe Zaal on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TRUST — moved: reviews flow right after the location -->
+<section class="section trust">
+  <div class="wrap">
+    <div class="trust-head rv">
+      <div class="rating">
+        <div class="num"><b>4.8</b>/5</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="cap">Rated by past guests</div>
+      </div>
+      <p class="venue">Staged at <strong>De Blauwe Zaal</strong> near Bruges, home to restaurant <strong>Zevensterre</strong> and its own Belgian wine, <strong>Merula</strong>. An intimate room, two nights only.</p>
+    </div>
+    <div class="rev-drift rv rv1" aria-label="Guest reviews">
+      <div class="track">
+        <figure class="rstub"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Horses seem to fly, and every seat feels like the best in the house.</p><figcaption class="who">A past guest</figcaption></figure>
+        <figure class="rstub"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Magical. Full of goosebumps from the first second.</p><figcaption class="who">A past guest</figcaption></figure>
+        <figure class="rstub"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>An evening I will never forget.</p><figcaption class="who">A past guest</figcaption></figure>
+        <figure class="rstub" aria-hidden="true"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Horses seem to fly, and every seat feels like the best in the house.</p><figcaption class="who">A past guest</figcaption></figure>
+        <figure class="rstub" aria-hidden="true"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Magical. Full of goosebumps from the first second.</p><figcaption class="who">A past guest</figcaption></figure>
+        <figure class="rstub" aria-hidden="true"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>An evening I will never forget.</p><figcaption class="who">A past guest</figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
