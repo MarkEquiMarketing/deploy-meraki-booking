@@ -711,8 +711,8 @@ em{font-style:italic;color:var(--accent)}
 
 /* ---------- location map (Google Maps embed, dark-themed via filter) ---------- */
 .map-frame{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--accent-line);box-shadow:var(--shadow),var(--glow)}
-.map-frame iframe{width:100%;height:440px;border:0;display:block;filter:invert(.92) hue-rotate(180deg) saturate(.9)}
-@media(max-width:760px){.map-frame iframe{height:340px}}
+.map-frame iframe{width:100%;height:340px;border:0;display:block;filter:invert(.92) hue-rotate(180deg) saturate(.9)}
+@media(max-width:760px){.map-frame iframe{height:260px}}
 
 /* ---------- partners / credibility strip ---------- */
 .partners{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--noir)}
