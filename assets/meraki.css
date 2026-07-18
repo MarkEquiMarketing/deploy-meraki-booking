@@ -610,7 +610,7 @@ em{font-style:italic;color:var(--accent)}
   color:var(--mist);background:none;border:0;cursor:pointer;padding:.32rem .58rem;border-radius:999px;transition:color var(--t),background var(--t)}
 .langswitch button:hover{color:var(--white)}
 .langswitch button[aria-current="true"]{background:var(--accent);color:#06242a}
-@media(max-width:880px){.langswitch{bottom:calc(4.6rem + env(safe-area-inset-bottom))}}
+@media(max-width:880px){.langswitch{bottom:calc(5.4rem + env(safe-area-inset-bottom))}}
 
 /* ---------- countdown ---------- */
 .count{display:flex;gap:clamp(.7rem,3vw,1.6rem);justify-content:center}
