@@ -19,6 +19,7 @@ window.MERAKI_I18N = {
     'hero.pres': 'The Meraki Horse Show présente',
     'hero.meta': 'Deux soirées uniquement · 2 &amp; 3 octobre 2026 · De Blauwe Zaal, Bruges',
     'hero.from': 'Dès',
+    'price.from': '€49,95',
     'hero.credits': 'Noté 4,8 par les spectateurs · un spectacle équestre profondément immersif',
     /* marquee */
     'marq.dates': '2 &amp; 3 octobre',
@@ -157,6 +158,7 @@ window.MERAKI_I18N = {
     'hero.pres': 'The Meraki Horse Show presenteert',
     'hero.meta': 'Slechts twee avonden · 2 &amp; 3 oktober 2026 · De Blauwe Zaal, Brugge',
     'hero.from': 'Vanaf',
+    'price.from': '€49,95',
     'hero.credits': '4,8 beoordeeld door gasten · een diep meeslepend theatraal paardenspektakel',
     /* marquee */
     'marq.dates': '2 &amp; 3 oktober',
