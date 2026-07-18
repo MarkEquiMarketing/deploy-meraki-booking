@@ -603,6 +603,15 @@ em{font-style:italic;color:var(--accent)}
 .buybar{transition:transform .35s var(--e)}
 @media(max-width:880px){.buybar{display:flex}}
 
+/* language switch — bottom-right pill (EN / FR / NL), sits above the mobile buybar */
+.langswitch{position:fixed;right:1rem;bottom:1rem;z-index:118;display:flex;gap:.12rem;padding:.26rem;border-radius:999px;
+  background:rgba(10,14,18,.82);backdrop-filter:blur(8px);border:1px solid var(--accent-line);box-shadow:var(--shadow)}
+.langswitch button{font-family:var(--head);font-weight:600;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--mist);background:none;border:0;cursor:pointer;padding:.32rem .58rem;border-radius:999px;transition:color var(--t),background var(--t)}
+.langswitch button:hover{color:var(--white)}
+.langswitch button[aria-current="true"]{background:var(--accent);color:#06242a}
+@media(max-width:880px){.langswitch{bottom:calc(4.6rem + env(safe-area-inset-bottom))}}
+
 /* ---------- countdown ---------- */
 .count{display:flex;gap:clamp(.7rem,3vw,1.6rem);justify-content:center}
 .count .unit{text-align:center;min-width:4.2rem}

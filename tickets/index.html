@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Tickets · Meraki Inspirations · 2 and 3 October 2026, Bruges</title>
-<meta name="description" content="Tickets from €49.95. Meraki Inspirations plays De Blauwe Zaal near Bruges on 2 and 3 October 2026, two nights only. Choose your night and secure your seats.">
+<meta name="description" data-i18n-meta="meta.desc" content="Tickets from €49.95. Meraki Inspirations plays De Blauwe Zaal near Bruges on 2 and 3 October 2026, two nights only. Choose your night and secure your seats.">
 <!-- Meta Pixel (consent-gated — loads ONLY after the visitor accepts cookies) -->
 <script>
 window.merakiLoadPixel = function () {
@@ -23,9 +23,19 @@ window.merakiLoadPixel = function () {
 };
 </script>
 <!-- End Meta Pixel -->
+<!-- i18n: language resolver (?lang -> localStorage -> en). FR/NL dictionary is at the end of the page. -->
+<script>
+window.MERAKI_LANG = function () {
+  var S = ['en', 'fr', 'nl'];
+  try { var q = (new URLSearchParams(location.search).get('lang') || '').toLowerCase(); if (S.indexOf(q) >= 0) return q; } catch (e) {}
+  try { var s = localStorage.getItem('meraki-lang'); if (S.indexOf(s) >= 0) return s; } catch (e) {}
+  return 'en';
+};
+</script>
+<script src="/assets/i18n.tickets.js"></script>
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<meta property="og:title" content="Tickets · Meraki Inspirations · 2 and 3 October 2026">
-<meta property="og:description" content="Two nights only at De Blauwe Zaal near Bruges. Tickets from €49.95. Choose your night and secure your seats.">
+<meta property="og:title" data-i18n-meta="meta.ogtitle" content="Tickets · Meraki Inspirations · 2 and 3 October 2026">
+<meta property="og:description" data-i18n-meta="meta.ogdesc" content="Two nights only at De Blauwe Zaal near Bruges. Tickets from €49.95. Choose your night and secure your seats.">
 <meta property="og:image" content="/preregistration/assets/hero.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,8 +53,8 @@ window.merakiLoadPixel = function () {
 <header class="topbar" id="topbar">
   <a href="#top" aria-label="Meraki Inspirations"><img class="logo" src="/assets/logo.png" alt="Meraki Horse Show"></a>
   <div class="tb-right">
-    <span class="tag">2 &amp; 3 Oct 2026 &middot; Bruges</span>
-    <a class="btn btn-p mag" href="#tickets"><i data-lucide="ticket"></i> Tickets</a>
+    <span class="tag" data-i18n="top.tag">2 &amp; 3 Oct 2026 &middot; Bruges</span>
+    <a class="btn btn-p mag" href="#tickets"><i data-lucide="ticket"></i> <span data-i18n="top.tickets">Tickets</span></a>
   </div>
 </header>
 
@@ -57,24 +67,24 @@ window.merakiLoadPixel = function () {
   <div class="hero-scrim"></div>
 
   <div class="playbill">
-    <p class="pb-pres anim">The Meraki Horse Show presents</p>
+    <p class="pb-pres anim" data-i18n="hero.pres">The Meraki Horse Show presents</p>
     <div class="pb-rule anim d1"></div>
     <h1 class="pb-title metal anim d1">MERAKI<br>INSPIRATIONS</h1>
     <div class="pb-rule anim d2"></div>
-    <p class="pb-meta anim d2">Two nights only &middot; 2 &amp; 3 October 2026 &middot; De Blauwe Zaal, Bruges</p>
+    <p class="pb-meta anim d2" data-i18n="hero.meta">Two nights only &middot; 2 &amp; 3 October 2026 &middot; De Blauwe Zaal, Bruges</p>
     <div class="anim d3" style="margin-top:2.4rem;display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap">
-      <a class="btn btn-p btn-lg mag" href="#tickets"><i data-lucide="ticket"></i> Get your tickets</a>
-      <span style="font-family:var(--head);font-weight:600;color:var(--silver);font-size:1.05rem">From <span class="dvb" style="font-size:1.3rem">&euro;49.95</span></span>
+      <a class="btn btn-p btn-lg mag" href="#tickets"><i data-lucide="ticket"></i> <span data-i18n="cta.get">Get your tickets</span></a>
+      <span style="font-family:var(--head);font-weight:600;color:var(--silver);font-size:1.05rem"><span data-i18n="hero.from">From</span> <span class="dvb" style="font-size:1.3rem">&euro;49.95</span></span>
     </div>
-    <p class="pb-credits anim d4">Rated 4.8 by guests &middot; a deeply immersive equestrian theatre spectacle</p>
+    <p class="pb-credits anim d4" data-i18n="hero.credits">Rated 4.8 by guests &middot; a deeply immersive equestrian theatre spectacle</p>
   </div>
 </section>
 
 <!-- KINETIC MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>2 &amp; 3 October</span><span class="lg"><b><img src="/assets/partners/blauwe-zaal.jpg" alt="De Blauwe Zaal"></b></span><span class="dim">Two nights only</span><span class="lg"><b><img src="/assets/partners/zevensterre.jpg" alt="Zevensterre"></b></span><span>Bruges</span><span class="lg"><b><img src="/assets/partners/merula.jpg" alt="Merula"></b></span><span class="dim">The total experience</span>
-    <span>2 &amp; 3 October</span><span class="lg"><b><img src="/assets/partners/blauwe-zaal.jpg" alt="De Blauwe Zaal"></b></span><span class="dim">Two nights only</span><span class="lg"><b><img src="/assets/partners/zevensterre.jpg" alt="Zevensterre"></b></span><span>Bruges</span><span class="lg"><b><img src="/assets/partners/merula.jpg" alt="Merula"></b></span><span class="dim">The total experience</span>
+    <span data-i18n="marq.dates">2 &amp; 3 October</span><span class="lg"><b><img src="/assets/partners/blauwe-zaal.jpg" alt="De Blauwe Zaal"></b></span><span class="dim" data-i18n="marq.nights">Two nights only</span><span class="lg"><b><img src="/assets/partners/zevensterre.jpg" alt="Zevensterre"></b></span><span data-i18n="marq.bruges">Bruges</span><span class="lg"><b><img src="/assets/partners/merula.jpg" alt="Merula"></b></span><span class="dim" data-i18n="marq.exp">The total experience</span>
+    <span data-i18n="marq.dates">2 &amp; 3 October</span><span class="lg"><b><img src="/assets/partners/blauwe-zaal.jpg" alt="De Blauwe Zaal"></b></span><span class="dim" data-i18n="marq.nights">Two nights only</span><span class="lg"><b><img src="/assets/partners/zevensterre.jpg" alt="Zevensterre"></b></span><span data-i18n="marq.bruges">Bruges</span><span class="lg"><b><img src="/assets/partners/merula.jpg" alt="Merula"></b></span><span class="dim" data-i18n="marq.exp">The total experience</span>
   </div>
 </div>
 
@@ -89,53 +99,53 @@ window.merakiLoadPixel = function () {
     <div class="cmp rv">
       <div class="cmp-col cmp-lab" aria-hidden="true">
         <div class="cmp-cell"></div>
-        <div class="cmp-cell"><i data-lucide="armchair"></i> Your seat</div>
-        <div class="cmp-cell"><i data-lucide="utensils"></i> Food &amp; drink</div>
-        <div class="cmp-cell"><i data-lucide="ticket"></i> Price</div>
+        <div class="cmp-cell"><i data-lucide="armchair"></i> <span data-i18n="tiers.seat">Your seat</span></div>
+        <div class="cmp-cell"><i data-lucide="utensils"></i> <span data-i18n="tiers.food">Food &amp; drink</span></div>
+        <div class="cmp-cell"><i data-lucide="ticket"></i> <span data-i18n="tiers.price">Price</span></div>
       </div>
       <div class="cmp-col cmp-vip">
-        <div class="cmp-cell cmp-th"><span class="tag">Full VIP</span><span class="lvl">Dinner &amp; show</span><h4>Chef's Table</h4></div>
-        <div class="cmp-cell"><span class="m-lab">Your seat</span><p>At the Chef's table, the complete evening.</p></div>
-        <div class="cmp-cell"><span class="m-lab">Food &amp; drink</span><p>Gourmet three course dinner by Zevensterre.</p></div>
-        <div class="cmp-cell cmp-price"><span class="m-lab">Price</span><span class="pr metal">&euro;160</span><a class="btn btn-p btn-sm" href="#tickets">Choose Chef's Table</a>
-          <details class="tl"><summary>See the evening timeline</summary><ul>
-            <li><b>17.00</b> Doors and welcome reception</li>
-            <li><b>17.30</b> Zevensterre gourmet dining begins</li>
-            <li><b>19.30</b> Take your seats</li>
-            <li><b>20.00</b> Showtime</li>
-            <li><b>21.00</b> Theatrical pause surprise</li>
-            <li><b>22.30</b> Meet the artists and afterparty</li>
+        <div class="cmp-cell cmp-th"><span class="tag" data-i18n="tiers.vip">Full VIP</span><span class="lvl" data-i18n="tiers.dinnershow">Dinner &amp; show</span><h4>Chef's Table</h4></div>
+        <div class="cmp-cell"><span class="m-lab" data-i18n="tiers.seat">Your seat</span><p data-i18n="tiers.chef.seat">At the Chef's table, the complete evening.</p></div>
+        <div class="cmp-cell"><span class="m-lab" data-i18n="tiers.food">Food &amp; drink</span><p data-i18n="tiers.chef.food">Gourmet three course dinner by Zevensterre.</p></div>
+        <div class="cmp-cell cmp-price"><span class="m-lab" data-i18n="tiers.price">Price</span><span class="pr metal">&euro;160</span><a class="btn btn-p btn-sm" href="#tickets" data-i18n="tiers.choose_chef">Choose Chef's Table</a>
+          <details class="tl"><summary data-i18n="tiers.timeline">See the evening timeline</summary><ul>
+            <li data-i18n="tiers.chef.t1"><b>17.00</b> Doors and welcome reception</li>
+            <li data-i18n="tiers.chef.t2"><b>17.30</b> Zevensterre gourmet dining begins</li>
+            <li data-i18n="tiers.chef.t3"><b>19.30</b> Take your seats</li>
+            <li data-i18n="tiers.chef.t4"><b>20.00</b> Showtime</li>
+            <li data-i18n="tiers.chef.t5"><b>21.00</b> Theatrical pause surprise</li>
+            <li data-i18n="tiers.chef.t6"><b>22.30</b> Meet the artists and afterparty</li>
           </ul></details>
         </div>
       </div>
       <div class="cmp-col">
-        <div class="cmp-cell cmp-th"><span class="lvl">Skybox</span><h4>Inner Circle</h4></div>
-        <div class="cmp-cell"><span class="m-lab">Your seat</span><p>Skybox, with a view across the whole arena.</p></div>
-        <div class="cmp-cell"><span class="m-lab">Food &amp; drink</span><p>One bottle of M&eacute;rula per table and a snack plankje, included in the price.</p></div>
-        <div class="cmp-cell cmp-price"><span class="m-lab">Price</span><span class="pr metal">&euro;80</span><a class="btn btn-g btn-sm" href="#tickets">Choose Inner Circle</a>
-          <details class="tl"><summary>See the evening timeline</summary><ul>
-            <li><b>18.30</b> Doors, take your seats, welcome plankje and a glass of Merula</li>
-            <li><b>20.00</b> Showtime</li>
-            <li><b>21.00</b> Pause</li>
-            <li><b>22.30</b> Club House bar opens</li>
+        <div class="cmp-cell cmp-th"><span class="lvl" data-i18n="tiers.skybox">Skybox</span><h4>Inner Circle</h4></div>
+        <div class="cmp-cell"><span class="m-lab" data-i18n="tiers.seat">Your seat</span><p data-i18n="tiers.ic.seat">Skybox, with a view across the whole arena.</p></div>
+        <div class="cmp-cell"><span class="m-lab" data-i18n="tiers.food">Food &amp; drink</span><p data-i18n="tiers.ic.food">One bottle of M&eacute;rula per table and a snack plankje, included in the price.</p></div>
+        <div class="cmp-cell cmp-price"><span class="m-lab" data-i18n="tiers.price">Price</span><span class="pr metal">&euro;80</span><a class="btn btn-g btn-sm" href="#tickets" data-i18n="tiers.choose_ic">Choose Inner Circle</a>
+          <details class="tl"><summary data-i18n="tiers.timeline">See the evening timeline</summary><ul>
+            <li data-i18n="tiers.ic.t1"><b>18.30</b> Doors, take your seats, welcome plankje and a glass of Merula</li>
+            <li data-i18n="tiers.ic.t2"><b>20.00</b> Showtime</li>
+            <li data-i18n="tiers.ic.t3"><b>21.00</b> Pause</li>
+            <li data-i18n="tiers.ic.t4"><b>22.30</b> Club House bar opens</li>
           </ul></details>
         </div>
       </div>
       <div class="cmp-col">
-        <div class="cmp-cell cmp-th"><span class="lvl">Ringside</span><h4>The Arena</h4></div>
-        <div class="cmp-cell"><span class="m-lab">Your seat</span><p>Ringside, right at the arena. Close enough to feel the ground move.</p></div>
-        <div class="cmp-cell"><span class="m-lab">Food &amp; drink</span><p>Pop-up bar right there.</p></div>
-        <div class="cmp-cell cmp-price"><span class="m-lab">Price</span><span class="pr metal">&euro;49.95</span><a class="btn btn-g btn-sm" href="#tickets">Choose Arena</a>
-          <details class="tl"><summary>See the evening timeline</summary><ul>
-            <li><b>19.00</b> Doors, pre order your drinks</li>
-            <li><b>20.00</b> Showtime</li>
-            <li><b>21.00</b> Pause, collect your pre ordered drinks</li>
-            <li><b>22.30</b> Show ends</li>
+        <div class="cmp-cell cmp-th"><span class="lvl" data-i18n="tiers.ringside">Ringside</span><h4>The Arena</h4></div>
+        <div class="cmp-cell"><span class="m-lab" data-i18n="tiers.seat">Your seat</span><p data-i18n="tiers.arena.seat">Ringside, right at the arena. Close enough to feel the ground move.</p></div>
+        <div class="cmp-cell"><span class="m-lab" data-i18n="tiers.food">Food &amp; drink</span><p data-i18n="tiers.arena.food">Pop-up bar right there.</p></div>
+        <div class="cmp-cell cmp-price"><span class="m-lab" data-i18n="tiers.price">Price</span><span class="pr metal">&euro;49.95</span><a class="btn btn-g btn-sm" href="#tickets" data-i18n="tiers.choose_arena">Choose Arena</a>
+          <details class="tl"><summary data-i18n="tiers.timeline">See the evening timeline</summary><ul>
+            <li data-i18n="tiers.arena.t1"><b>19.00</b> Doors, pre order your drinks</li>
+            <li data-i18n="tiers.arena.t2"><b>20.00</b> Showtime</li>
+            <li data-i18n="tiers.arena.t3"><b>21.00</b> Pause, collect your pre ordered drinks</li>
+            <li data-i18n="tiers.arena.t4"><b>22.30</b> Show ends</li>
           </ul></details>
         </div>
       </div>
     </div>
-    <p class="rv rv1" style="margin-top:1.6rem;font-size:.95rem;color:var(--grey-400);text-align:center">Parking (&euro;5) is sold separately in the shop for Arena and Inner Circle guests. Chef's Table includes parking.</p>
+    <p class="rv rv1" style="margin-top:1.6rem;font-size:.95rem;color:var(--grey-400);text-align:center" data-i18n="tiers.parking">Parking (&euro;5) is sold separately in the shop for Arena and Inner Circle guests. Chef's Table includes parking.</p>
   </div>
 </section>
 
@@ -150,7 +160,7 @@ window.merakiLoadPixel = function () {
       <div class="m-tile m-vid big" data-vimeo="1209533346" role="button" tabindex="0" aria-label="Watch the trailer">
         <img src="/preregistration/assets/hero.jpg" alt="Meraki Inspirations trailer">
         <span class="reel-play"><i data-lucide="play"></i></span>
-        <span class="vlab">Watch the trailer</span>
+        <span class="vlab" data-i18n="footage.trailer">Watch the trailer</span>
       </div>
       <div class="m-tile wide" data-img="/assets/venue/meraki-009.jpg" data-alt="The cast in the blue light"><img loading="lazy" src="/assets/venue/meraki-009.jpg" alt="The cast in the blue light"><span class="exp"><i data-lucide="expand"></i></span></div>
       <div class="m-tile tall" data-img="/assets/venue/blauwe-zaal-2.jpg" data-alt="The stables at De Blauwe Zaal"><img loading="lazy" src="/assets/venue/blauwe-zaal-2.jpg" alt="The stables at De Blauwe Zaal"><span class="exp"><i data-lucide="expand"></i></span></div>
@@ -215,22 +225,22 @@ window.merakiLoadPixel = function () {
 <section class="section prize" id="tickets">
   <div class="wrap" style="max-width:72rem">
     <div class="intro rv" style="text-align:center;margin:0 auto 2.2rem">
-      <span class="label">Tickets</span>
-      <h2 class="h2">Your tickets, <em>step by step</em></h2>
+      <span class="label" data-i18n="steps.label">Tickets</span>
+      <h2 class="h2" data-i18n="steps.heading">Your tickets, <em>step by step</em></h2>
     </div>
 
     <div class="count rv" data-until="2026-10-02" style="margin-bottom:3rem" aria-label="Countdown to the first night">
-      <div class="unit"><span class="n metal" data-u="days">00</span><span class="u">days</span></div>
-      <div class="unit"><span class="n metal" data-u="hours">00</span><span class="u">hours</span></div>
-      <div class="unit"><span class="n metal" data-u="mins">00</span><span class="u">minutes</span></div>
-      <div class="unit"><span class="n metal" data-u="secs">00</span><span class="u">seconds</span></div>
+      <div class="unit"><span class="n metal" data-u="days">00</span><span class="u" data-i18n="steps.days">days</span></div>
+      <div class="unit"><span class="n metal" data-u="hours">00</span><span class="u" data-i18n="steps.hours">hours</span></div>
+      <div class="unit"><span class="n metal" data-u="mins">00</span><span class="u" data-i18n="steps.mins">minutes</span></div>
+      <div class="unit"><span class="n metal" data-u="secs">00</span><span class="u" data-i18n="steps.secs">seconds</span></div>
     </div>
 
     <div class="bstep rv">
       <div class="n">0</div>
       <div class="body">
-        <h3>Where you are headed</h3>
-        <p style="color:var(--mist);font-size:1.02rem;margin:.4rem 0 1rem">De Blauwe Zaal, Blauwezaalhoek 4, 8310 Brugge. Just outside Bruges, parking on site and included for Chef's Table.</p>
+        <h3 data-i18n="steps.s0.h">Where you are headed</h3>
+        <p style="color:var(--mist);font-size:1.02rem;margin:.4rem 0 1rem" data-i18n="steps.s0.p">De Blauwe Zaal, Blauwezaalhoek 4, 8310 Brugge. Just outside Bruges, parking on site and included for Chef's Table.</p>
         <div class="map-frame">
           <iframe src="https://maps.google.com/maps?q=Blauwezaalhoek%204%2C%208310%20Brugge&t=&z=11&ie=UTF8&iwloc=&output=embed" title="De Blauwe Zaal on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
@@ -240,10 +250,10 @@ window.merakiLoadPixel = function () {
     <div class="bstep rv rv1">
       <div class="n">1</div>
       <div class="body">
-        <h3>Pick your night</h3>
+        <h3 data-i18n="steps.s1.h">Pick your night</h3>
         <div class="nights grid2" role="tablist" aria-label="Choose your night">
-          <button type="button" role="tab" data-pane="shop-fri" aria-selected="true"><span class="day">Friday</span><span class="date">2 October 2026</span></button>
-          <button type="button" role="tab" data-pane="shop-sat" aria-selected="false"><span class="day">Saturday</span><span class="date">3 October 2026</span></button>
+          <button type="button" role="tab" data-pane="shop-fri" aria-selected="true"><span class="day" data-i18n="steps.friday">Friday</span><span class="date" data-i18n="steps.date_fri">2 October 2026</span></button>
+          <button type="button" role="tab" data-pane="shop-sat" aria-selected="false"><span class="day" data-i18n="steps.saturday">Saturday</span><span class="date" data-i18n="steps.date_sat">3 October 2026</span></button>
         </div>
       </div>
     </div>
@@ -251,7 +261,7 @@ window.merakiLoadPixel = function () {
     <div class="bstep rv rv2">
       <div class="n">2</div>
       <div class="body">
-        <h3>Pick your seats and pay</h3>
+        <h3 data-i18n="steps.s2.h">Pick your seats and pay</h3>
         <div class="shop-frame">
           <div class="pane" id="shop-fri">
             <iframe src="https://sales.ticketing.cm.com/themerakishow-2-october" title="Buy tickets for Friday 2 October" loading="eager"></iframe>
@@ -259,7 +269,7 @@ window.merakiLoadPixel = function () {
           <div class="pane" id="shop-sat" hidden>
             <iframe data-src="https://sales.ticketing.cm.com/themerakishow-3-october" title="Buy tickets for Saturday 3 October"></iframe>
           </div>
-          <div class="shop-foot"><i data-lucide="shield-check"></i> Secure checkout by CM <a href="https://sales.ticketing.cm.com/themerakishow-2-october" target="_blank" rel="noopener" data-shoplink>Prefer the full shop?</a></div>
+          <div class="shop-foot"><i data-lucide="shield-check"></i> <span data-i18n="steps.secure">Secure checkout by CM</span> <a href="https://sales.ticketing.cm.com/themerakishow-2-october" target="_blank" rel="noopener" data-shoplink data-i18n="steps.fullshop">Prefer the full shop?</a></div>
         </div>
       </div>
     </div>
@@ -267,8 +277,8 @@ window.merakiLoadPixel = function () {
     <div class="bstep rv rv3">
       <div class="n">3</div>
       <div class="body" style="align-self:center">
-        <h3>That is it</h3>
-        <p style="color:var(--mist);font-size:1.02rem;margin-top:.4rem">Your tickets land in your inbox. Parking (&euro;5) is sold separately in the shop for Arena and Inner Circle.</p>
+        <h3 data-i18n="steps.s3.h">That is it</h3>
+        <p style="color:var(--mist);font-size:1.02rem;margin-top:.4rem" data-i18n="steps.s3.p">Your tickets land in your inbox. Parking (&euro;5) is sold separately in the shop for Arena and Inner Circle.</p>
       </div>
     </div>
   </div>
@@ -297,23 +307,25 @@ window.merakiLoadPixel = function () {
 (function () {
   var A = '/preregistration/assets/';   /* real show photos */
   var V = '/assets/venue/';             /* real venue + restaurant photos */
+  function L(){ return (window.MERAKI_LANG && window.MERAKI_LANG()) || 'en'; }
+  function tr(key, en){ var lang=L(); var d=(window.MERAKI_I18N||{})[lang]; return (lang!=='en' && d && d[key]!=null) ? d[key] : en; }
   var ACTS = [
-    { rn:'I', icon:'map-pin', cap:'Arrival', t:'You arrive at De Blauwe Zaal',
+    { k:'1', rn:'I', icon:'map-pin', cap:'Arrival', t:'You arrive at De Blauwe Zaal',
       lead:'Just outside Bruges, De Blauwe Zaal, an idyllic estate and an exclusive event location of the area. With its award winning restaurant, its vineyard and its 5 star horse stable facilities.',
       more:'Doors open, the atmosphere is electric. Give a toast to what will be a once in a lifetime experience.',
       chips:['De Blauwe Zaal','Sint Kruis, Bruges','2 & 3 October 2026'],
       imgs:[V+'blauwe-zaal-3.jpg', V+'boat-1.webp', V+'vineyard.jpg'] },
-    { rn:'II', icon:'utensils', cap:'Dine', t:'Dinner, wine or a drink at the bar',
+    { k:'2', rn:'II', icon:'utensils', cap:'Dine', t:'Dinner, wine or a drink at the bar',
       lead:'Each ticket type is unique. The Chef’s Table guests sit down for their last course before the show, finding their front row table. The Inner Circle guests are welcomed by a bottle of Mérula Brut de Bruges and a snack plankje, flying high in the skybox, a view like no other.',
       more:'The Arena guests mingle, pre ordering their drinks for the pause at one of the pop up bars beside the tribune. Try Merula’s finest wine or the non alcoholic option, everyone enjoys the first glass.',
       chips:['Chef’s Table · €160','Inner Circle · €80','The Arena · €49.95'],
       imgs:[V+'food-1.webp', V+'merula-cellar.jpg', V+'food-2.jpg'] },
-    { rn:'III', icon:'sparkles', cap:'The show', t:'The stage is set, the curtain rises',
+    { k:'3', rn:'III', icon:'sparkles', cap:'The show', t:'The stage is set, the curtain rises',
       lead:'Meraki Inspirations is built around the power of dreams. A young man dreams of a world where he is free, full of mystical creatures and a deep trust between horse and human.',
       more:'Some of the best performers, artists and riders in Europe bring that dream to life, in a deeply immersive equestrian theatre spectacle. We will not spoil what happens. Past guests rate it 4.8 out of 5.',
       chips:['Rated 4.8 by guests','Two nights only'],
       imgs:[V+'show-firecircle.jpg', A+'aerial.jpg', A+'trick.jpg'] },
-    { rn:'IV', icon:'martini', cap:'Afterwards', t:'You stay a little longer',
+    { k:'4', rn:'IV', icon:'martini', cap:'Afterwards', t:'You stay a little longer',
       lead:'Feeling inspired? Share a story or an experience with your fellow guests, stay in the moment, hold on to the emotion.',
       more:'The Chef’s Table guests get to mingle with the artists, the Inner Circle can enjoy the Club House bar, and the pop up bars stay open for the Arena guests.',
       chips:['Club House bar','Two nights only'],
@@ -323,18 +335,21 @@ window.merakiLoadPixel = function () {
       pics = document.getElementById('evPics'), cnt = document.getElementById('evCnt'), idx = 0;
   ACTS.forEach(function (a, i) {
     var b = document.createElement('button'); b.className = 'evtab'; b.type = 'button'; b.setAttribute('role', 'tab');
-    b.innerHTML = '<i data-lucide="' + a.icon + '"></i>' + a.cap;
+    b.innerHTML = '<i data-lucide="' + a.icon + '"></i><span class="tcap"></span>';
     b.addEventListener('click', function () { go(i); });
     tabs.appendChild(b);
   });
+  function labelTabs() {
+    tabs.querySelectorAll('.evtab').forEach(function (b, i) { var s = b.querySelector('.tcap'); if (s) s.textContent = tr('ev.' + ACTS[i].k + '.cap', ACTS[i].cap); });
+  }
   function fill() {
     var a = ACTS[idx];
     tabs.querySelectorAll('.evtab').forEach(function (b, j) { b.setAttribute('aria-selected', j === idx ? 'true' : 'false'); });
-    tx.querySelector('.evk').textContent = 'Act ' + a.rn + ' · ' + a.cap;
-    tx.querySelector('h3').textContent = a.t;
-    tx.querySelector('.lead2').textContent = a.lead;
-    tx.querySelector('.more').textContent = a.more;
-    tx.querySelector('.chips').innerHTML = a.chips.map(function (c) { return '<span class="chip">' + c + '</span>'; }).join('');
+    tx.querySelector('.evk').textContent = tr('ev.act', 'Act') + ' ' + a.rn + ' · ' + tr('ev.' + a.k + '.cap', a.cap);
+    tx.querySelector('h3').textContent = tr('ev.' + a.k + '.t', a.t);
+    tx.querySelector('.lead2').textContent = tr('ev.' + a.k + '.lead', a.lead);
+    tx.querySelector('.more').textContent = tr('ev.' + a.k + '.more', a.more);
+    tx.querySelector('.chips').innerHTML = a.chips.map(function (c, ci) { return '<span class="chip">' + tr('ev.' + a.k + '.chip' + ci, c) + '</span>'; }).join('');
     pics.innerHTML = a.imgs.map(function (s, k) {
       if (s.indexOf('PH:') === 0) {
         return '<div class="ph-slot"><i data-lucide="image-plus"></i><span>' + s.slice(3) + '</span></div>';
@@ -357,7 +372,7 @@ window.merakiLoadPixel = function () {
       }
     }
     if (window.lucide && lucide.createIcons) lucide.createIcons();
-    cnt.textContent = 'Act ' + (idx + 1) + ' of ' + ACTS.length;
+    cnt.textContent = tr('ev.act', 'Act') + ' ' + (idx + 1) + ' ' + tr('ev.of', 'of') + ' ' + ACTS.length;
   }
   function go(i) {
     idx = (i + ACTS.length) % ACTS.length;
@@ -367,7 +382,8 @@ window.merakiLoadPixel = function () {
   document.querySelectorAll('.evnav [data-d]').forEach(function (b) {
     b.addEventListener('click', function () { go(idx + +b.dataset.d); });
   });
-  fill();
+  labelTabs(); fill();
+  document.addEventListener('meraki:lang', function () { labelTabs(); fill(); });
 })();
 </script>
 
@@ -376,12 +392,12 @@ window.merakiLoadPixel = function () {
 <!-- PARTNERS — credibility strip, above the footage (kept away from the booking iframe per branding rule) -->
 <section class="section partners">
   <div class="wrap">
-    <p class="lead-in rv">One venue, everything under one roof</p>
+    <p class="lead-in rv" data-i18n="partners.leadin">One venue, everything under one roof</p>
     <div class="pt-row rv rv1">
-      <div class="pt-item"><div class="pt-plate"><img src="/assets/partners/blauwe-zaal.jpg" alt="De Blauwe Zaal"></div><span class="pt-role">The venue</span></div>
-      <div class="pt-item"><div class="pt-plate"><img src="/assets/partners/zevensterre.jpg" alt="Zevensterre restaurant"></div><span class="pt-role">Restaurant</span></div>
-      <div class="pt-item"><div class="pt-plate"><img src="/assets/partners/merula.jpg" alt="Merula, Belgian wine"></div><span class="pt-role">Belgian wine</span></div>
-      <div class="pt-item"><div class="pt-plate"><img src="/assets/partners/lamme-goedzak.png" alt="De Lamme Goedzak"></div><span class="pt-role">Canal cruise</span></div>
+      <div class="pt-item"><div class="pt-plate"><img src="/assets/partners/blauwe-zaal.jpg" alt="De Blauwe Zaal"></div><span class="pt-role" data-i18n="partners.role_venue">The venue</span></div>
+      <div class="pt-item"><div class="pt-plate"><img src="/assets/partners/zevensterre.jpg" alt="Zevensterre restaurant"></div><span class="pt-role" data-i18n="partners.role_restaurant">Restaurant</span></div>
+      <div class="pt-item"><div class="pt-plate"><img src="/assets/partners/merula.jpg" alt="Merula, Belgian wine"></div><span class="pt-role" data-i18n="partners.role_wine">Belgian wine</span></div>
+      <div class="pt-item"><div class="pt-plate"><img src="/assets/partners/lamme-goedzak.png" alt="De Lamme Goedzak"></div><span class="pt-role" data-i18n="partners.role_boat">Canal cruise</span></div>
       <!-- [PLACEHOLDER] Add confirmed sponsor/tourism logos here once received + approved:
            Visit Bruges, Visit Flanders, Van der Valk. Add another .pt-item with an <img> in .pt-plate. -->
     </div>
@@ -393,14 +409,14 @@ window.merakiLoadPixel = function () {
   <div class="wrap">
     <div class="bigticket rv">
       <div class="main">
-        <span class="label">Two nights only</span>
-        <h2 class="h2">When they are gone, <em>they are gone.</em></h2>
-        <p>Two performances at an intimate venue. Pick your night and secure your seats now.</p>
-        <a class="btn btn-p btn-lg mag" href="#tickets"><i data-lucide="ticket"></i> Get your tickets</a>
+        <span class="label" data-i18n="cta.label">Two nights only</span>
+        <h2 class="h2" data-i18n="cta.heading">When they are gone, <em>they are gone.</em></h2>
+        <p data-i18n="cta.text">Two performances at an intimate venue. Pick your night and secure your seats now.</p>
+        <a class="btn btn-p btn-lg mag" href="#tickets"><i data-lucide="ticket"></i> <span data-i18n="cta.get">Get your tickets</span></a>
       </div>
       <div class="stub">
         <div class="big dvb metal">2&amp;3</div>
-        <div class="sm">October 2026<br>De Blauwe Zaal</div>
+        <div class="sm" data-i18n="cta.stub">October 2026<br>De Blauwe Zaal</div>
       </div>
     </div>
   </div>
@@ -410,9 +426,9 @@ window.merakiLoadPixel = function () {
 <section class="section details">
   <div class="wrap">
     <div class="detail-grid">
-      <div class="detail rv"><div class="ic"><i data-lucide="calendar"></i></div><h4>When</h4><p><strong>Friday 2 and Saturday 3 October 2026.</strong> Two performances, one weekend.</p></div>
-      <div class="detail rv rv1"><div class="ic"><i data-lucide="map-pin"></i></div><h4>Where</h4><p>De Blauwe Zaal, Blauwezaalhoek 4, 8310 Brugge, Belgium. Parking (&euro;5) in the shop for Arena and Inner Circle, included for Chef's Table.</p></div>
-      <div class="detail rv rv2"><div class="ic"><i data-lucide="shield-check"></i></div><h4>Tickets</h4><p>Secure checkout by CM. Pick your night above, or open the <a href="https://sales.ticketing.cm.com/themerakishow-2-october" target="_blank" rel="noopener">Friday</a> or <a href="https://sales.ticketing.cm.com/themerakishow-3-october" target="_blank" rel="noopener">Saturday</a> shop directly.</p></div>
+      <div class="detail rv"><div class="ic"><i data-lucide="calendar"></i></div><h4 data-i18n="gtk.when_h">When</h4><p data-i18n="gtk.when_p"><strong>Friday 2 and Saturday 3 October 2026.</strong> Two performances, one weekend.</p></div>
+      <div class="detail rv rv1"><div class="ic"><i data-lucide="map-pin"></i></div><h4 data-i18n="gtk.where_h">Where</h4><p data-i18n="gtk.where_p">De Blauwe Zaal, Blauwezaalhoek 4, 8310 Brugge, Belgium. Parking (&euro;5) in the shop for Arena and Inner Circle, included for Chef's Table.</p></div>
+      <div class="detail rv rv2"><div class="ic"><i data-lucide="shield-check"></i></div><h4 data-i18n="gtk.tickets_h">Tickets</h4><p data-i18n="gtk.tickets_p">Secure checkout by CM. Pick your night above, or open the <a href="https://sales.ticketing.cm.com/themerakishow-2-october" target="_blank" rel="noopener">Friday</a> or <a href="https://sales.ticketing.cm.com/themerakishow-3-october" target="_blank" rel="noopener">Saturday</a> shop directly.</p></div>
     </div>
   </div>
 </section>
@@ -424,18 +440,18 @@ window.merakiLoadPixel = function () {
       <div class="rating">
         <div class="num"><b>4.8</b>/5</div>
         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="cap">Rated by past guests</div>
+        <div class="cap" data-i18n="trust.cap">Rated by past guests</div>
       </div>
-      <p class="venue">Staged at <strong>De Blauwe Zaal</strong> near Bruges, home to restaurant <strong>Zevensterre</strong> and its own Belgian wine, <strong>Merula</strong>. An intimate room, two nights only.</p>
+      <p class="venue" data-i18n="trust.venue">Staged at <strong>De Blauwe Zaal</strong> near Bruges, home to restaurant <strong>Zevensterre</strong> and its own Belgian wine, <strong>Merula</strong>. An intimate room, two nights only.</p>
     </div>
     <div class="rev-drift rv rv1" aria-label="Guest reviews">
       <div class="track">
-        <figure class="rstub"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Horses seem to fly, and every seat feels like the best in the house.</p><figcaption class="who">A past guest</figcaption></figure>
-        <figure class="rstub"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Magical. Full of goosebumps from the first second.</p><figcaption class="who">A past guest</figcaption></figure>
-        <figure class="rstub"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>An evening I will never forget.</p><figcaption class="who">A past guest</figcaption></figure>
-        <figure class="rstub" aria-hidden="true"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Horses seem to fly, and every seat feels like the best in the house.</p><figcaption class="who">A past guest</figcaption></figure>
-        <figure class="rstub" aria-hidden="true"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Magical. Full of goosebumps from the first second.</p><figcaption class="who">A past guest</figcaption></figure>
-        <figure class="rstub" aria-hidden="true"><div class="adm">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>An evening I will never forget.</p><figcaption class="who">A past guest</figcaption></figure>
+        <figure class="rstub"><div class="adm" data-i18n="trust.admit">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p data-i18n="trust.r1">Horses seem to fly, and every seat feels like the best in the house.</p><figcaption class="who" data-i18n="trust.who">A past guest</figcaption></figure>
+        <figure class="rstub"><div class="adm" data-i18n="trust.admit">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p data-i18n="trust.r2">Magical. Full of goosebumps from the first second.</p><figcaption class="who" data-i18n="trust.who">A past guest</figcaption></figure>
+        <figure class="rstub"><div class="adm" data-i18n="trust.admit">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p data-i18n="trust.r3">An evening I will never forget.</p><figcaption class="who" data-i18n="trust.who">A past guest</figcaption></figure>
+        <figure class="rstub" aria-hidden="true"><div class="adm" data-i18n="trust.admit">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p data-i18n="trust.r1">Horses seem to fly, and every seat feels like the best in the house.</p><figcaption class="who" data-i18n="trust.who">A past guest</figcaption></figure>
+        <figure class="rstub" aria-hidden="true"><div class="adm" data-i18n="trust.admit">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p data-i18n="trust.r2">Magical. Full of goosebumps from the first second.</p><figcaption class="who" data-i18n="trust.who">A past guest</figcaption></figure>
+        <figure class="rstub" aria-hidden="true"><div class="adm" data-i18n="trust.admit">Admit &middot; review</div><div class="perf"></div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p data-i18n="trust.r3">An evening I will never forget.</p><figcaption class="who" data-i18n="trust.who">A past guest</figcaption></figure>
       </div>
     </div>
   </div>
@@ -458,32 +474,39 @@ window.merakiLoadPixel = function () {
         </a>
       </div>
     </div>
-    <p class="fine">Meraki Inspirations plays at De Blauwe Zaal near Bruges on 2 and 3 October 2026. Tickets are personal and sold through CM Ticketing. <a href="#tickets">Terms</a> &middot; <a href="#tickets">Privacy</a></p>
-    <p class="copy">&copy; 2026 The Meraki Horse Show &middot; Meraki Inspirations</p>
+    <p class="fine" data-i18n="footer.fine">Meraki Inspirations plays at De Blauwe Zaal near Bruges on 2 and 3 October 2026. Tickets are personal and sold through CM Ticketing. <a href="#tickets">Terms</a> &middot; <a href="#tickets">Privacy</a></p>
+    <p class="copy" data-i18n="footer.copy">&copy; 2026 The Meraki Horse Show &middot; Meraki Inspirations</p>
   </div>
 </footer>
 
 <!-- COOKIE CONSENT (gates the Meta Pixel; the ticket shop always works) -->
 <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie consent">
-  <p>We use cookies to measure our ads and improve this page. The ticket shop works either way. <a href="#tickets">Privacy</a></p>
+  <p data-i18n="cookie.text">We use cookies to measure our ads and improve this page. The ticket shop works either way. <a href="#tickets">Privacy</a></p>
   <div class="cookie-btns">
-    <button class="btn btn-g btn-sm" type="button" data-decline>Decline</button>
-    <button class="btn btn-p btn-sm" type="button" data-accept>Accept</button>
+    <button class="btn btn-g btn-sm" type="button" data-decline data-i18n="cookie.decline">Decline</button>
+    <button class="btn btn-p btn-sm" type="button" data-accept data-i18n="cookie.accept">Accept</button>
   </div>
 </div>
 
 <!-- LIGHTBOX (video/vimeo playback) -->
 <div class="lb" id="lb" aria-hidden="true">
   <div class="lb-stage">
-    <button class="lb-close" id="lbClose"><i data-lucide="x"></i> Close</button>
+    <button class="lb-close" id="lbClose"><i data-lucide="x"></i> <span data-i18n="lb.close">Close</span></button>
     <div id="lbContent"></div>
   </div>
 </div>
 
 <!-- MOBILE STICKY BUY-BAR -->
 <div class="buybar" aria-hidden="false">
-  <div class="bb-tx"><strong>From &euro;49.95</strong><span>2 &amp; 3 Oct 2026 &middot; De Blauwe Zaal</span></div>
-  <a class="btn btn-p" href="#tickets"><i data-lucide="ticket"></i> Get tickets</a>
+  <div class="bb-tx"><strong data-i18n="buybar.from">From &euro;49.95</strong><span data-i18n="buybar.sub">2 &amp; 3 Oct 2026 &middot; De Blauwe Zaal</span></div>
+  <a class="btn btn-p" href="#tickets"><i data-lucide="ticket"></i> <span data-i18n="buybar.get">Get tickets</span></a>
+</div>
+
+<!-- LANGUAGE SWITCH -->
+<div class="langswitch" role="group" aria-label="Language / Taal / Langue">
+  <button type="button" data-lang="en">EN</button>
+  <button type="button" data-lang="fr">FR</button>
+  <button type="button" data-lang="nl">NL</button>
 </div>
 
 <!-- HONEST FOMO TOAST (see legal note in meraki.js — real or verifiable messages only) -->

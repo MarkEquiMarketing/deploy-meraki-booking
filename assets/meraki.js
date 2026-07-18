@@ -12,6 +12,43 @@
     /* icons (Lucide via CDN, loaded with defer) */
     if (window.lucide && typeof lucide.createIcons === 'function') lucide.createIcons();
 
+    /* ---------- i18n: swap [data-i18n] text + meta, wire the language switch ----------
+       English lives in the HTML (snapshotted here); FR/NL come from window.MERAKI_I18N.
+       window.MERAKI_LANG() (defined inline in the page) resolves ?lang -> localStorage -> 'en'. */
+    (function () {
+      var I18N = window.MERAKI_I18N || {};
+      var getLang = window.MERAKI_LANG || function () { return 'en'; };
+      var nodes = [].slice.call(document.querySelectorAll('[data-i18n]'));
+      var snap = nodes.map(function (el) { return el.innerHTML; });
+      var metaNodes = [].slice.call(document.querySelectorAll('meta[data-i18n-meta]'));
+      var metaSnap = metaNodes.map(function (m) { return m.getAttribute('content'); });
+      var titleSnap = document.title;
+      function apply(lang) {
+        var d = (lang !== 'en' && I18N[lang]) ? I18N[lang] : null;
+        nodes.forEach(function (el, i) {
+          var k = el.getAttribute('data-i18n');
+          el.innerHTML = (d && d[k] != null) ? d[k] : snap[i];
+        });
+        metaNodes.forEach(function (m, i) {
+          var k = m.getAttribute('data-i18n-meta');
+          m.setAttribute('content', (d && d[k] != null) ? d[k] : metaSnap[i]);
+        });
+        document.title = (d && d['meta.title'] != null) ? d['meta.title'] : titleSnap;
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('meraki-lang', lang); } catch (e) {}
+        document.querySelectorAll('.langswitch [data-lang]').forEach(function (b) {
+          b.setAttribute('aria-current', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+        });
+        document.dispatchEvent(new CustomEvent('meraki:lang', { detail: lang }));
+      }
+      window.merakiSetLang = apply;
+      var sw = document.querySelector('.langswitch');
+      if (sw) sw.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-lang]'); if (b) apply(b.getAttribute('data-lang'));
+      });
+      apply(getLang());
+    })();
+
     /* reveal on scroll */
     var rvs = document.querySelectorAll('.rv');
     if (rvs.length) {
