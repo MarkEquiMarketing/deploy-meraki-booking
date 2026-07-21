@@ -39,7 +39,7 @@ window.MERAKI_LANG = function () {
   return 'en';
 };
 </script>
-<script src="/assets/i18n.tickets.js"></script>
+<script src="/assets/i18n.tickets.js?v=2"></script>
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <meta property="og:title" data-i18n-meta="meta.ogtitle" content="Tickets · Meraki Inspirations · 2 and 3 October 2026">
 <meta property="og:description" data-i18n-meta="meta.ogdesc" content="Two nights only at De Blauwe Zaal near Bruges. Tickets from €49.95. Choose your night and secure your seats.">
@@ -48,8 +48,8 @@ window.MERAKI_LANG = function () {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-<!-- Meraki shared design library -->
-<link rel="stylesheet" href="/assets/meraki.css">
+<!-- Meraki shared design library (?v busts stale caches; bump on css/js changes) -->
+<link rel="stylesheet" href="/assets/meraki.css?v=2">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 </head>
 <body>
@@ -540,6 +540,6 @@ window.merakiPurchases = [
 ];
 </script>
 
-<script src="/assets/meraki.js" defer></script>
+<script src="/assets/meraki.js?v=2" defer></script>
 </body>
 </html>
