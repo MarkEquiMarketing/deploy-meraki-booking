@@ -1,8 +1,8 @@
 Options -Indexes
 RewriteEngine On
 
-# Bare root → main site (only the empty path, sub-paths untouched)
-RewriteRule ^$ https://meraki.show/ [R=301,L]
+# Bare root → the ticket page (only the empty path, sub-paths untouched)
+RewriteRule ^$ /tickets/ [R=302,L]
 
 # The giveaway / pre-registration now forwards to ticket sales.
 # NOTE: only the PAGE root redirects — /preregistration/assets/* keeps serving
