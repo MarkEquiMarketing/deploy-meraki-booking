@@ -564,7 +564,7 @@ em{font-style:italic;color:var(--accent)}
 .shop-frame .shop-foot{display:flex;align-items:center;gap:.5rem;padding:.9rem 1.15rem;font-size:.82rem;color:var(--grey-400);background:var(--noir);border-top:1px solid var(--line)}
 .shop-frame .shop-foot svg{width:.95rem;height:.95rem;color:var(--accent);flex-shrink:0}
 .shop-frame .shop-foot a{color:var(--accent);margin-left:auto;white-space:nowrap}
-@media(max-width:760px){.shop-frame iframe{height:1250px}}
+@media(max-width:760px){.shop-frame iframe{height:100vh;height:100svh}}
 
 /* buy flow — numbered steps around the shop (1 pick night, 2 seats+pay, 3 done) */
 .bstep{display:flex;gap:1.4rem;margin-bottom:2.2rem}
@@ -604,7 +604,7 @@ em{font-style:italic;color:var(--accent)}
 @media(max-width:880px){.buybar{display:flex}}
 
 /* language switch — bottom-right pill (EN / FR / NL), sits above the mobile buybar */
-.langswitch{position:fixed;right:1rem;bottom:1rem;z-index:118;display:flex;gap:.12rem;padding:.26rem;border-radius:999px;
+.langswitch{position:fixed;left:1rem;bottom:1rem;z-index:118;display:flex;gap:.12rem;padding:.26rem;border-radius:999px;
   background:rgba(10,14,18,.82);backdrop-filter:blur(8px);border:1px solid var(--accent-line);box-shadow:var(--shadow)}
 .langswitch button{font-family:var(--head);font-weight:600;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
   color:var(--mist);background:none;border:0;cursor:pointer;padding:.32rem .58rem;border-radius:999px;transition:color var(--t),background var(--t)}
@@ -619,7 +619,7 @@ em{font-style:italic;color:var(--accent)}
 .count .u{font-family:var(--head);font-weight:600;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);margin-top:.35rem;display:block}
 
 /* ---------- honest FOMO toast ---------- */
-.fomo-toast{position:fixed;left:1rem;bottom:1rem;z-index:115;max-width:20rem;display:flex;gap:.75rem;align-items:flex-start;
+.fomo-toast{position:fixed;right:1rem;bottom:1rem;z-index:115;max-width:20rem;display:flex;gap:.75rem;align-items:flex-start;
   background:linear-gradient(160deg,var(--slate),var(--charcoal));border:1px solid var(--accent-line);border-radius:var(--r);
   padding:.9rem 2.2rem .9rem 1rem;box-shadow:var(--shadow-lg);opacity:0;transform:translateY(14px);pointer-events:none;
   transition:opacity .45s var(--e),transform .45s var(--e)}
