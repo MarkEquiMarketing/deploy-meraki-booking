@@ -398,6 +398,9 @@ em{font-style:italic;color:var(--accent)}
 .tl ul{list-style:none;margin:.6rem 0 0;padding:0;display:flex;flex-direction:column;gap:.4rem}
 .tl li{font-size:.82rem;color:var(--cream);line-height:1.35}
 .tl li b{color:var(--white);font-family:var(--head);margin-right:.4rem;font-variant-numeric:tabular-nums}
+.tl .tl-day+.tl-day{margin-top:.85rem;padding-top:.75rem;border-top:1px solid var(--line)}
+.tl-dl{display:block;font-family:var(--head);font-weight:700;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-top:.7rem}
+.tl .tl-day ul{margin-top:.45rem}
 .evnav{display:flex;gap:1rem;align-items:center;justify-content:center;margin-top:1.6rem}
 .evnav .cnt{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-400)}
 .evnav button{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line-2);
