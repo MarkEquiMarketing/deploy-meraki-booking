@@ -124,17 +124,21 @@
               if (f) { f.src = f.dataset.src; f.removeAttribute('data-src'); }
             }
           });
-          if (!checkoutTracked && window.fbq) { fbq('track', 'InitiateCheckout'); checkoutTracked = true; }
+          /* only a real shop counts as a checkout start (no InitiateCheckout while a pane shows "sales open soon") */
+          var hasShop = !!document.querySelector('#' + btn.dataset.pane + ' iframe');
+          if (!checkoutTracked && hasShop && window.fbq) { fbq('track', 'InitiateCheckout'); checkoutTracked = true; }
         });
       });
     }
 
-    /* countdown — <div class="count" data-until="2026-10-02"> (days/hours/mins/secs) */
+    /* countdown — <div class="count" data-until="2027-04-16T18:00"> (days/hours/mins/secs).
+       A bare date ("2027-04-16") counts to local midnight; add a time to count to the doors. */
     var cd = document.querySelector('.count[data-until]');
     if (cd) {
       var units = ['days', 'hours', 'mins', 'secs'];
+      var untilStr = cd.dataset.until.indexOf('T') > 0 ? cd.dataset.until : cd.dataset.until + 'T00:00:00';
       var tick = function () {
-        var diff = new Date(cd.dataset.until + 'T00:00:00') - new Date();
+        var diff = new Date(untilStr) - new Date();
         if (diff < 0) diff = 0;
         var vals = {
           days: Math.floor(diff / 864e5),
